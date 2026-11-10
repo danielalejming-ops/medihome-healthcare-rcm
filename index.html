@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDIHOME • Atención Médica a Domicilio en Valencia, Carabobo 24/7</title>
+  <meta name="description" content="Servicios médicos profesionales a domicilio en Valencia, Carabobo. Emergencias 24 horas, sueroterapia, cambio de sondas, curaciones y Plan Salud Sin Fronteras.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              deep: '#006680',
+              primary: '#008aa6',
+              accent: '#0ea5b9',
+              mint: '#5cbfac',
+              soft: '#ecf9f7',
+              navy: '#0e212c',
+              cream: '#f8fcfc'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-mint selection:text-brand-navy">
+
+  <!-- 1. TOP EMERGENCY HOTLINE BAR (Inspirado en Venemergencia) -->
+  <div class="bg-gradient-to-r from-brand-deep via-brand-primary to-teal-700 text-white px-4 py-2.5 text-xs font-medium">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-rose-400 animate-ping"></span>
+        <span class="font-bold tracking-wide text-rose-200">EMERGENCIAS 24/7 EN VALENCIA:</span>
+        <span class="text-slate-100">Médicos de guardia listos para acudir a tu domicilio</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-bold">
+        <a href="tel:04121233287" class="hover:text-teal-200 transition-colors flex items-center gap-1">
+          📞 0412-1233287
+        </a>
+        <span class="text-teal-300/50">|</span>
+        <a href="tel:04144417118" class="hover:text-teal-200 transition-colors flex items-center gap-1">
+          📞 0414-4417118
+        </a>
+        <span class="text-teal-300/50">|</span>
+        <span class="text-emerald-300 font-semibold">📍 Valencia, Carabobo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MAIN NAVIGATION (Header con Dropdowns y Espaciado Amplio) -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-slate-200 shadow-sm transition-all">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo (Armonioso, Compacto y Nítido) -->
+      <a href="#" class="flex items-center gap-3 shrink-0 group">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 bg-white rounded-xl shadow-sm border border-slate-200 p-1 flex items-center justify-center transition-transform group-hover:scale-105">
+          <img src="logo.png" alt="MEDIHOME Logo" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <span class="text-xl sm:text-2xl font-bold font-display text-brand-deep tracking-tight flex items-center gap-1.5 leading-none">
+            MEDIHOME
+          </span>
+          <p class="text-[10px] sm:text-[11px] font-bold text-brand-primary tracking-wider uppercase mt-1">Salud a Domicilio • Valencia</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links con Dropdowns -->
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-8 text-[13px] font-semibold text-slate-700">
+        
+        <!-- 1. Conócenos Dropdown -->
+        <div class="relative group py-2.5">
+          <a href="#conocenos" class="flex items-center gap-1 text-brand-deep font-bold hover:text-brand-primary transition-colors">
+            <span>Conócenos</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-primary group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="absolute top-full left-0 hidden group-hover:block pt-2 z-50">
+            <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 p-3 min-w-[260px] space-y-1">
+              <a href="#conocenos" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <span class="text-base">🏥</span>
+                <div>
+                  <p class="text-xs font-bold text-slate-800">Nuestra Filosofía</p>
+                  <p class="text-[11px] text-slate-500">Tratar la salud y cuidar a la familia</p>
+                </div>
+              </a>
+              <a href="#conocenos" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <span class="text-base">🛡️</span>
+                <div>
+                  <p class="text-xs font-bold text-slate-800">Rigor Clínico y Ética</p>
+                  <p class="text-[11px] text-slate-500">Médicos colegiados y registro MPPS</p>
+                </div>
+              </a>
+              <a href="#conocenos" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <span class="text-base">⏱️</span>
+                <div>
+                  <p class="text-xs font-bold text-slate-800">Respuesta 24 Horas</p>
+                  <p class="text-[11px] text-slate-500">Guardia activa en Valencia</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Servicios Médicos Dropdown (Mega-Menú) -->
+        <div class="relative group py-2.5">
+          <a href="#servicios" class="flex items-center gap-1 hover:text-brand-primary transition-colors">
+            <span>Servicios Médicos</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-primary group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:block pt-2 z-50">
+            <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 min-w-[360px] grid grid-cols-2 gap-2">
+              <a href="#servicios" class="flex items-center gap-2 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <span class="text-base">🚨</span>
+                <span class="text-xs font-bold text-slate-800">Emergencias 24H</span>
+              </a>
+              <a href="#servicios" class="flex items-center gap-2 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <span class="text-base">💧</span>
+                <span class="text-xs font-bold text-slate-800">Sueroterapia</span>
+              </a>
+              <a href="#servicios" class="flex items-center gap-2 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <span class="text-base">🔄</span>
+                <span class="text-xs font-bold text-slate-800">Cambio de Sonda</span>
+              </a>
+              <a href="#servicios" class="flex items-center gap-2 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <span class="text-base">🩹</span>
+                <span class="text-xs font-bold text-slate-800">Cura de Escaras</span>
+              </a>
+              <a href="#servicios" class="flex items-center gap-2 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <span class="text-base">✂️</span>
+                <span class="text-xs font-bold text-slate-800">Cirugía Menor</span>
+              </a>
+              <a href="#servicios" class="flex items-center gap-2 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <span class="text-base">💉</span>
+                <span class="text-xs font-bold text-slate-800">Inyectables EV/IM</span>
+              </a>
+              <div class="col-span-2 pt-2 border-t border-slate-100 flex items-center justify-between">
+                <a href="#servicios" class="text-[11px] font-bold text-brand-primary hover:underline flex items-center gap-1">
+                  Ver portafolio completo ➔
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Cómo Funciona Dropdown -->
+        <div class="relative group py-2.5">
+          <a href="#como-funciona" class="flex items-center gap-1 hover:text-brand-primary transition-colors">
+            <span>Cómo Funciona</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-primary group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="absolute top-full left-0 hidden group-hover:block pt-2 z-50">
+            <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 p-3 min-w-[270px] space-y-1">
+              <a href="#como-funciona" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <span class="w-5 h-5 rounded-full bg-brand-deep text-white text-[11px] font-bold flex items-center justify-center shrink-0">1</span>
+                <div>
+                  <p class="text-xs font-bold text-slate-800">Escríbenos o Llámanos</p>
+                  <p class="text-[11px] text-slate-500">Indica síntoma y dirección</p>
+                </div>
+              </a>
+              <a href="#como-funciona" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <span class="w-5 h-5 rounded-full bg-brand-primary text-white text-[11px] font-bold flex items-center justify-center shrink-0">2</span>
+                <div>
+                  <p class="text-xs font-bold text-slate-800">Triaje y Confirmación</p>
+                  <p class="text-[11px] text-slate-500">Evaluación médica y despacho</p>
+                </div>
+              </a>
+              <a href="#como-funciona" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <span class="w-5 h-5 rounded-full bg-brand-mint text-slate-950 text-[11px] font-bold flex items-center justify-center shrink-0">3</span>
+                <div>
+                  <p class="text-xs font-bold text-slate-800">Médico en tu Puerta</p>
+                  <p class="text-[11px] text-slate-500">Atención y récipe en casa</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Salud Sin Fronteras -->
+        <a href="#salud-sin-fronteras" class="hover:text-brand-primary transition-colors flex items-center gap-1 text-brand-deep font-semibold whitespace-nowrap">
+          <span class="text-amber-500">★</span> Salud Sin Fronteras
+        </a>
+
+        <!-- 5. Equipo Médico Dropdown -->
+        <div class="relative group py-2.5">
+          <a href="#directorio" class="flex items-center gap-1 hover:text-brand-primary transition-colors">
+            <span>Equipo Médico</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-primary group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="absolute top-full left-0 hidden group-hover:block pt-2 z-50">
+            <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 p-3 min-w-[280px] space-y-1">
+              <a href="#directorio" class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <div class="w-9 h-9 rounded-full overflow-hidden shrink-0 border border-brand-primary shadow-sm">
+                  <img src="dr_victor_cedeno.png" class="w-full h-full object-cover object-top">
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-slate-800">Dr. Víctor Cedeño</p>
+                  <p class="text-[11px] text-brand-primary font-semibold">Médico Cirujano General</p>
+                </div>
+              </a>
+              <a href="#directorio" class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <div class="w-9 h-9 rounded-full overflow-hidden shrink-0 border border-teal-600 shadow-sm">
+                  <img src="dra_alejandra_ramones.png" class="w-full h-full object-cover object-top">
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-slate-800">Alejandra Ramones</p>
+                  <p class="text-[11px] text-teal-600 font-semibold">Asistente Médico</p>
+                </div>
+              </a>
+              <a href="#directorio" class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors border-t border-slate-100">
+                <div class="w-9 h-9 rounded-full bg-brand-deep text-white flex items-center justify-center text-xs font-bold shrink-0">
+                  💉
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-slate-800">Equipo de Enfermería Móvil</p>
+                  <p class="text-[11px] text-slate-500">Técnicas Asépticas Avanzadas</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Zonas Dropdown -->
+        <div class="relative group py-2.5">
+          <a href="#cobertura" class="flex items-center gap-1 hover:text-brand-primary transition-colors">
+            <span>Zonas</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-primary group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="absolute top-full left-0 hidden group-hover:block pt-2 z-50">
+            <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 p-3 min-w-[240px] space-y-1 text-xs text-slate-700">
+              <a href="#cobertura" class="block p-2 rounded-xl hover:bg-slate-50 font-medium">📍 El Parral & Prebo</a>
+              <a href="#cobertura" class="block p-2 rounded-xl hover:bg-slate-50 font-medium">📍 El Trigal & Trigaleña</a>
+              <a href="#cobertura" class="block p-2 rounded-xl hover:bg-slate-50 font-medium">📍 Guaparo & La Viña</a>
+              <a href="#cobertura" class="block p-2 rounded-xl hover:bg-slate-50 font-medium">📍 San Diego & Naguanagua</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Cotizador -->
+        <a href="#cotizador" class="hover:text-brand-primary transition-colors text-brand-primary font-bold whitespace-nowrap">Cotizador</a>
+
+      </nav>
+
+      <!-- Desktop CTA Button -->
+      <div class="hidden lg:flex items-center gap-3 shrink-0">
+        <a href="https://wa.me/584245690079?text=Hola%20MEDIHOME,%20solicito%20atenci%C3%B3n%20m%C3%A9dica%20a%20domicilio%20en%20Valencia" target="_blank" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-full text-xs font-bold shadow-md shadow-emerald-600/30 transition-all hover:scale-105 active:scale-95 whitespace-nowrap">
+          <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.961.905 3.16.905h.004c3.182 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.77-5.768-5.771zm0-3.172c4.931 0 8.932 4.001 8.932 8.932 0 4.931-4.001 8.932-8.932 8.932-1.562 0-3.033-.404-4.321-1.112l-6.71 1.758 1.79-6.539c-.777-1.328-1.222-2.875-1.222-4.519 0-4.931 4.001-8.932 8.932-8.932z"/></svg>
+          <span>Solicitar Atención</span>
+        </a>
+      </div>
+
+      <!-- Mobile Action Buttons & Hamburger -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <a href="https://wa.me/584245690079?text=Hola%20MEDIHOME,%20solicito%20atenci%C3%B3n%20m%C3%A9dica%20a%20domicilio%20en%20Valencia" target="_blank" class="flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-sm transition-all active:scale-95">
+          <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.961.905 3.16.905h.004c3.182 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.77-5.768-5.771zm0-3.172c4.931 0 8.932 4.001 8.932 8.932 0 4.931-4.001 8.932-8.932 8.932-1.562 0-3.033-.404-4.321-1.112l-6.71 1.758 1.79-6.539c-.777-1.328-1.222-2.875-1.222-4.519 0-4.931 4.001-8.932 8.932-8.932z"/></svg>
+          <span>Chat</span>
+        </a>
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú" class="p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none transition-colors">
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white/98 backdrop-blur-md border-b border-slate-200 px-5 py-4 space-y-2 shadow-2xl transition-all">
+      <a href="#conocenos" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2.5 text-sm font-bold text-slate-800 hover:text-brand-primary border-b border-slate-100">
+        <span>🏥</span> Conócenos y Filosofía
+      </a>
+      <a href="#servicios" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2.5 text-sm font-bold text-slate-800 hover:text-brand-primary border-b border-slate-100">
+        <span>🩺</span> Servicios Médicos a Domicilio
+      </a>
+      <a href="#como-funciona" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2.5 text-sm font-bold text-slate-800 hover:text-brand-primary border-b border-slate-100">
+        <span>⏱️</span> Cómo Funciona la Atención
+      </a>
+      <a href="#salud-sin-fronteras" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2.5 text-sm font-bold text-amber-600 hover:text-amber-700 border-b border-slate-100">
+        <span>✈️</span> Plan Salud Sin Fronteras
+      </a>
+      <a href="#directorio" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2.5 text-sm font-bold text-slate-800 hover:text-brand-primary border-b border-slate-100">
+        <span>👨‍⚕️</span> Directorio Médico de Guardia
+      </a>
+      <a href="#cobertura" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2.5 text-sm font-bold text-slate-800 hover:text-brand-primary border-b border-slate-100">
+        <span>📍</span> Zonas de Cobertura en Valencia
+      </a>
+      <a href="#cotizador" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2.5 text-sm font-bold text-brand-primary border-b border-slate-100">
+        <span>🧮</span> Cotizador de Servicios
+      </a>
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="tel:04121233287" class="flex items-center justify-center gap-2 bg-rose-600 hover:bg-rose-700 text-white py-3 rounded-xl text-sm font-bold shadow-md">
+          📞 Llamar Urgencia: 0412-1233287
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. HERO SECTION (Impactante, Dinámico y Cálido) -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-white via-brand-soft/40 to-slate-50 pt-10 pb-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-brand-soft border border-brand-mint/40 text-brand-deep px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase">
+            <span class="w-2 h-2 rounded-full bg-brand-mint"></span>
+            Atención Domiciliaria en Valencia, Carabobo
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display text-slate-900 tracking-tight leading-[1.15]">
+            La mejor atención médica, <br class="hidden sm:inline">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-deep via-brand-primary to-brand-mint">
+              en la comodidad de tu hogar.
+            </span>
+          </h1>
+
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Olvídate del tráfico y las salas de espera saturadas. Nuestro equipo de médicos colegiados y enfermeros acude a tu casa con insumos estériles y equipos de diagnóstico.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="https://wa.me/584245690079?text=Hola%20MEDIHOME,%20solicito%20atenci%C3%B3n%20m%C3%A9dica%20a%20domicilio%20inmediata" target="_blank" class="w-full sm:w-auto bg-brand-primary hover:bg-brand-deep text-white px-8 py-4 rounded-2xl font-bold text-base shadow-xl shadow-brand-primary/25 transition-all flex items-center justify-center gap-2.5 active:scale-95">
+              <span>🩺 Solicitar Atención Ahora</span>
+            </a>
+            <a href="#servicios" class="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-7 py-4 rounded-2xl font-bold text-base transition-all text-center">
+              Explorar Servicios Médicos
+            </a>
+          </div>
+
+          <!-- Trust Badges Row -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/80 max-w-lg mx-auto lg:mx-0 text-left">
+            <div>
+              <p class="text-2xl font-extrabold text-brand-deep font-display">24/7</p>
+              <p class="text-xs text-slate-500 font-medium">Disponibilidad de urgencias</p>
+            </div>
+            <div>
+              <p class="text-2xl font-extrabold text-brand-deep font-display">+1,200</p>
+              <p class="text-xs text-slate-500 font-medium">Pacientes atendidos</p>
+            </div>
+            <div>
+              <p class="text-2xl font-extrabold text-brand-deep font-display">100%</p>
+              <p class="text-xs text-slate-500 font-medium">Insumos y técnica estéril</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual (Carrusel Dinámico 10s: Víctor & Alejandra) -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Decorative Backing Blur -->
+            <div class="absolute -top-6 -left-6 w-72 h-72 bg-brand-soft rounded-full filter blur-3xl opacity-70"></div>
+            <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-brand-mint/20 rounded-full filter blur-3xl opacity-70"></div>
+            
+            <!-- Main Hero Image Frame & Carousel -->
+            <div class="relative bg-white rounded-3xl p-3 shadow-2xl border border-slate-200 overflow-hidden">
+              
+              <!-- Slide 1: Dr. Víctor Cedeño -->
+              <div id="hero-slide-0" class="hero-slide transition-opacity duration-700 ease-in-out block">
+                <div class="h-[470px] overflow-hidden rounded-2xl relative">
+                  <img src="dr_victor_cedeno.png" alt="Dr. Víctor Cedeño - Médico de Guardia MEDIHOME" class="w-full h-full object-cover object-top">
+                  
+                  <!-- Floating Doctor & Emergency Badge -->
+                  <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200 shadow-xl flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-xl bg-brand-deep text-white flex items-center justify-center font-bold text-sm shadow">
+                        🩺
+                      </div>
+                      <div>
+                        <h4 class="text-xs font-bold text-slate-900">Dr. Víctor Cedeño</h4>
+                        <p class="text-[11px] text-brand-primary font-semibold">Médico Cirujano General • Urgencias 24H</p>
+                      </div>
+                    </div>
+                    <a href="tel:04121233287" class="bg-rose-50 hover:bg-rose-100 text-rose-600 font-bold text-xs px-3 py-1.5 rounded-xl transition-all border border-rose-200">
+                      Llamar 24H
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2: Alejandra Ramones -->
+              <div id="hero-slide-1" class="hero-slide transition-opacity duration-700 ease-in-out hidden">
+                <div class="h-[470px] overflow-hidden rounded-2xl relative">
+                  <img src="dra_alejandra_ramones.png" alt="Alejandra Ramones - Asistente Médico" class="w-full h-full object-cover object-top">
+                  
+                  <!-- Floating Doctor & Procedure Badge -->
+                  <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200 shadow-xl flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center font-bold text-sm shadow">
+                        🩺
+                      </div>
+                      <div>
+                        <h4 class="text-xs font-bold text-slate-900">Alejandra Ramones</h4>
+                        <p class="text-[11px] text-teal-600 font-semibold">Asistente Médico • Cuidados Clínicos</p>
+                      </div>
+                    </div>
+                    <a href="https://wa.me/584245690079?text=Hola%20MEDIHOME,%20deseo%20consultar%20con%20la%20Asistente%20M%C3%A9dico%20Alejandra%20Ramones" target="_blank" class="bg-teal-50 hover:bg-teal-100 text-brand-primary font-bold text-xs px-3 py-1.5 rounded-xl transition-all border border-teal-200">
+                      Consultar
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel Indicators (2 Círculos: Azul activo, Blanco inactivo) -->
+              <div class="flex items-center justify-center gap-3 pt-3 pb-1">
+                <button 
+                  id="hero-dot-0" 
+                  onclick="setHeroSlide(0)" 
+                  class="w-3.5 h-3.5 rounded-full transition-all duration-300 bg-brand-primary ring-4 ring-brand-primary/20 scale-110"
+                  aria-label="Ver Dr. Víctor Cedeño"
+                  title="Dr. Víctor Cedeño (Médico Cirujano General)"
+                ></button>
+                <button 
+                  id="hero-dot-1" 
+                  onclick="setHeroSlide(1)" 
+                  class="w-3.5 h-3.5 rounded-full transition-all duration-300 bg-white border-2 border-slate-300 hover:border-brand-primary"
+                  aria-label="Ver Alejandra Ramones"
+                  title="Alejandra Ramones (Asistente Médico)"
+                ></button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SECCIÓN CONÓCENOS (Misión, Vocación Médica y Compromiso en Valencia) -->
+  <section id="conocenos" class="py-20 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Title -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-deep bg-brand-soft border border-brand-mint/40 px-3.5 py-1.5 rounded-full">
+          Conócenos • Vocación y Calidez Médica
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 mt-3">
+          La Medicina que Mereces, Donde Más Seguro te Sientes
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+          Nacimos en Valencia, Edo. Carabobo, con una convicción clara: cuando la salud de un ser querido se compromete, trasladarse por la ciudad y esperar largas horas en una clínica no debería ser la única opción. Llevamos el rigor hospitalario y el calor humano a la tranquilidad de tu habitación.
+        </p>
+      </div>
+
+      <!-- Grid: 2 Columns (Manifesto Story + 4 Pillars) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+        
+        <!-- Left: Our Story & Manifesto -->
+        <div class="lg:col-span-5 flex flex-col">
+          <div class="bg-gradient-to-br from-brand-deep via-teal-900 to-slate-900 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden flex-1 flex flex-col justify-between">
+            <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-brand-mint/10 rounded-full blur-2xl"></div>
+            
+            <div>
+              <div class="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold text-brand-mint mb-4">
+                <span>🏥 Nuestra Filosofía</span>
+              </div>
+              
+              <h3 class="text-2xl font-bold font-display mb-4 text-white">
+                Tratar la salud, cuidar a la familia.
+              </h3>
+              
+              <p class="text-xs sm:text-sm text-slate-200 leading-relaxed space-y-2">
+                En <strong class="text-brand-mint">MEDIHOME</strong> entendemos que el hogar es el mejor entorno para recuperarse. Para nuestros adultos mayores, niños o pacientes convalecientes, recibir atención médica en su propio espacio reduce el estrés, evita contagios intrahospitalarios y brinda paz a todo el entorno familiar.
+              </p>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-white/10 space-y-3 text-xs text-teal-100">
+              <div class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-brand-mint text-slate-950 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+                <span>Médicos y enfermeros colegiados con credenciales de ley (MPPS).</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-brand-mint text-slate-950 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+                <span>Maletines clínicos completos con instrumental de diagnóstico calibrado.</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-brand-mint text-slate-950 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+                <span>Técnicas asépticas estrictas y descarte bioseguro de insumos.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 4 Pillars of Excellence -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+          
+          <!-- Pillar 1 -->
+          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-brand-primary hover:shadow-lg transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-teal-100 text-brand-deep flex items-center justify-center text-2xl mb-4">
+                🛡️
+              </div>
+              <h4 class="text-base font-bold text-slate-900 font-display mb-1.5">Rigor Clínico y Ética</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                No improvisamos. Todo nuestro personal cuenta con registro profesional activo y aplica protocolos clínicos fundamentados en las mejores prácticas médicas.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200 text-[11px] font-semibold text-brand-primary">
+              Colegio de Médicos de Carabobo
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-brand-primary hover:shadow-lg transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mb-4">
+                ⏱️
+              </div>
+              <h4 class="text-base font-bold text-slate-900 font-display mb-1.5">Respuesta Oportuna 24H</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Las urgencias no tienen horario. Mantenemos guardia activa para trasladarnos con prontitud a las principales urbanizaciones de Valencia.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200 text-[11px] font-semibold text-emerald-600">
+              Cobertura en El Parral, Trigal, Prebo y más
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-brand-primary hover:shadow-lg transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mb-4">
+                🤝
+              </div>
+              <h4 class="text-base font-bold text-slate-900 font-display mb-1.5">Calidez y Escucha</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Nos tomamos el tiempo para evaluar detalladamente al paciente y explicar a sus familiares el plan de tratamiento con cercanía, paciencia y respeto.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200 text-[11px] font-semibold text-amber-600">
+              Atención con vocación y paciencia
+            </div>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-brand-primary hover:shadow-lg transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl mb-4">
+                🌍
+              </div>
+              <h4 class="text-base font-bold text-slate-900 font-display mb-1.5">Salud Sin Fronteras</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Somos los ojos y manos de los hijos que viven fuera del país, entregando informes médicos digitales y fotos de control tras cada visita.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200 text-[11px] font-semibold text-blue-600">
+              Reportes directos a WhatsApp para familiares
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Interactive Video Greeting + Official Prescription Modal Trigger -->
+      <div class="mt-12 pt-10 border-t border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        
+        <!-- Video Greeting Card -->
+        <div class="bg-gradient-to-r from-slate-900 to-teal-950 rounded-3xl p-6 text-white shadow-xl flex flex-col sm:flex-row items-center gap-6 border border-teal-500/20 group hover:border-brand-primary transition-all">
+          <div class="relative w-full sm:w-44 h-36 rounded-2xl overflow-hidden shrink-0 bg-slate-800 flex items-center justify-center cursor-pointer" onclick="openVideoModal()">
+            <img src="dr_victor_cedeno.png" alt="Equipo Médico MEDIHOME" class="w-full h-full object-cover object-top opacity-80 group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-brand-deep/40 flex items-center justify-center">
+              <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <span class="absolute bottom-2 right-2 bg-slate-950/80 backdrop-blur-sm text-[10px] font-bold px-2 py-0.5 rounded text-white">0:45 min</span>
+          </div>
+          <div class="space-y-2 text-center sm:text-left">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-mint bg-brand-mint/10 border border-brand-mint/20 px-2.5 py-0.5 rounded-full">Mensaje del Equipo</span>
+            <h4 class="text-base font-bold text-white font-display">Conoce a tus Médicos en 45s</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Dr. Víctor Cedeño y Alejandra Ramones (Asistente Médico) explican nuestro compromiso y rapidez en Valencia.
+            </p>
+            <button onclick="openVideoModal()" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-mint hover:text-white transition-colors pt-1">
+              <span>Reproducir Mensaje</span>
+              <span>➔</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Official Prescription & Report Card -->
+        <div class="bg-gradient-to-r from-teal-900 via-slate-900 to-slate-900 rounded-3xl p-6 text-white shadow-xl flex flex-col sm:flex-row items-center gap-6 border border-teal-500/20 group hover:border-brand-primary transition-all">
+          <div class="relative w-full sm:w-44 h-36 rounded-2xl overflow-hidden shrink-0 bg-white p-3 flex flex-col justify-between cursor-pointer border border-slate-200" onclick="openRecipeModal()">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-1">
+              <span class="text-[9px] font-bold text-teal-800 font-display">MEDIHOME</span>
+              <span class="text-[8px] text-slate-500">MPPS • CMEC</span>
+            </div>
+            <div class="space-y-1 py-1">
+              <div class="h-1.5 bg-slate-200 rounded w-3/4"></div>
+              <div class="h-1.5 bg-teal-100 rounded w-full"></div>
+              <div class="h-1.5 bg-slate-200 rounded w-1/2"></div>
+            </div>
+            <div class="flex items-center justify-between pt-1 border-t border-slate-100">
+              <span class="text-[8px] font-bold text-emerald-600">✓ Sello Húmedo</span>
+              <span class="text-[9px]">📱 QR</span>
+            </div>
+            <div class="absolute inset-0 bg-brand-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="bg-brand-primary text-white text-[10px] font-bold px-2 py-1 rounded shadow">Ver Modelo</span>
+            </div>
+          </div>
+          <div class="space-y-2 text-center sm:text-left">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300 bg-amber-400/10 border border-amber-400/20 px-2.5 py-0.5 rounded-full">Garantía Legal</span>
+            <h4 class="text-base font-bold text-white font-display">Récipe y Reporte Clínico Oficial</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Formatos válidos para Farmatodo, Locatel, aseguradoras y reportes en PDF para familiares en el exterior.
+            </p>
+            <button onclick="openRecipeModal()" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-300 hover:text-white transition-colors pt-1">
+              <span>Examinar Formato Oficial</span>
+              <span>➔</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. CÓMO FUNCIONA (Inspirado en Médico En Tu Casa) -->
+  <section id="como-funciona" class="py-16 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-primary bg-brand-soft px-3 py-1 rounded-full">Proceso Simple y Seguro</span>
+        <h2 class="text-3xl font-bold font-display text-slate-900 mt-3">¿Cómo solicitar tu atención médica en 3 pasos?</h2>
+        <p class="text-slate-600 text-sm mt-2">Diseñado especialmente para la comodidad de adultos mayores y familias.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Step 1 -->
+        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 relative group hover:border-brand-mint transition-all">
+          <div class="w-14 h-14 rounded-2xl bg-brand-deep text-white font-bold font-display text-2xl flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 transition-transform">
+            1
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 font-display mb-2">Escríbenos o Llámanos</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Envía un mensaje de texto, nota de voz o llama a nuestros números <strong class="text-slate-900">0412-1233287</strong> / <strong class="text-slate-900">0414-4417118</strong> indicando el síntoma y tu ubicación.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 relative group hover:border-brand-mint transition-all">
+          <div class="w-14 h-14 rounded-2xl bg-brand-primary text-white font-bold font-display text-2xl flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 transition-transform">
+            2
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 font-display mb-2">Triaje y Confirmación</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Nuestro equipo médico evalúa de inmediato la prioridad clínica, te indica el tiempo estimado de llegada y asigna al profesional adecuado con los insumos estériles requeridos.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 relative group hover:border-brand-mint transition-all">
+          <div class="w-14 h-14 rounded-2xl bg-brand-mint text-slate-900 font-bold font-display text-2xl flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 transition-transform">
+            3
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 font-display mb-2">Médico en tu Puerta</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            El médico o enfermero llega a tu casa, realiza la evaluación física, ejecuta el procedimiento necesario, emite récipes oficiales y deja las indicaciones de seguimiento.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CATÁLOGO COMPLETO DE SERVICIOS MÉDICOS -->
+  <section id="servicios" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-deep bg-brand-soft border border-brand-mint/40 px-3.5 py-1.5 rounded-full">Portafolio Clínico Integral</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 mt-3">Servicios Médicos a Domicilio</h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+          Atención clínica integral, procedimientos menores y cuidados especializados en tu hogar. <strong>Realizamos cualquier tipo de servicio o requerimiento médico que el paciente necesite</strong>, garantizando insumos estériles, bioseguridad y el más alto rigor profesional.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Servicio 1: Emergencias 24h -->
+        <div class="bg-white rounded-3xl p-6 border-2 border-rose-200 hover:border-rose-400 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">🚨</span>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 bg-rose-100 text-rose-700 rounded-full">Prioritario</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 font-display">Emergencias Médicas 24H</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Atención médica de urgencia en tu domicilio ante crisis de dolor, dificultad respiratoria, caídas o descompensaciones agudas a cualquier hora de la noche.
+            </p>
+          </div>
+          <a href="https://wa.me/584245690079?text=EMERGENCIA:%20Solicito%20m%C3%A9dico%20de%20urgencia%20a%20domicilio%20en%20Valencia" target="_blank" class="mt-5 w-full block text-center py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs transition-all">
+            Solicitar Urgencia 24H
+          </a>
+        </div>
+
+        <!-- Servicio: Medicamentos EV / IM -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">💉</span>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 bg-teal-50 text-brand-primary rounded-full">Enfermería</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 font-display">Medicamentos EV e IM</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Administración profesional de tratamientos farmacológicos por vía intravenosa (EV) o intramuscular (IM): antibióticos, analgésicos, corticoides y protectores gástricos.
+            </p>
+          </div>
+          <a href="https://wa.me/584245690079?text=Hola,%20solicito%20administraci%C3%B3n%20de%20medicamentos%20a%20domicilio" target="_blank" class="mt-5 w-full block text-center py-2.5 rounded-xl bg-slate-100 hover:bg-brand-primary hover:text-white text-slate-700 font-bold text-xs transition-all">
+            Solicitar Inyectables
+          </a>
+        </div>
+
+        <!-- Servicio: Curaciones y Úlceras -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">🩹</span>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 bg-teal-50 text-brand-primary rounded-full">Avanzado</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 font-display">Curación de Heridas y Úlceras</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Tratamiento de úlceras por presión (escaras en pacientes encamados), pie diabético, quemaduras y heridas quirúrgicas con apósitos e insumos estériles de alta gama.
+            </p>
+          </div>
+          <a href="https://wa.me/584245690079?text=Hola,%20solicito%20curaci%C3%B3n%20de%20heridas/escaras%20a%20domicilio" target="_blank" class="mt-5 w-full block text-center py-2.5 rounded-xl bg-slate-100 hover:bg-brand-primary hover:text-white text-slate-700 font-bold text-xs transition-all">
+            Solicitar Curación
+          </a>
+        </div>
+
+        <!-- Servicio: Cambio de Sonda -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">🔄</span>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 bg-teal-50 text-brand-primary rounded-full">Geriátrico</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 font-display">Cambio y Manejo de Sonda</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Colocación, retiro y mantenimiento periódico de sonda vesical (Foley) y sonda nasogástrica bajo estricta técnica aséptica, evitando traumas y dolor al paciente.
+            </p>
+          </div>
+          <a href="https://wa.me/584245690079?text=Hola,%20solicito%20cambio%20de%20sonda%20vesical/nasog%C3%A1strica%20en%20Valencia" target="_blank" class="mt-5 w-full block text-center py-2.5 rounded-xl bg-slate-100 hover:bg-brand-primary hover:text-white text-slate-700 font-bold text-xs transition-all">
+            Solicitar Cambio de Sonda
+          </a>
+        </div>
+
+        <!-- Servicio: Sueroterapia -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">💧</span>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 bg-cyan-50 text-cyan-700 rounded-full">Bienestar</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 font-display">Sueroterapia e Hidratación</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Infusiones endovenosas para deshidratación, fatiga extrema, cuadros gastrointestinales, resacas y refuerzo inmunológico con cócteles de vitaminas del complejo B y electrolitos.
+            </p>
+          </div>
+          <a href="https://wa.me/584245690079?text=Hola,%20deseo%20agendar%20sueroterapia%20e%20hidrataci%C3%B3n%20a%20domicilio" target="_blank" class="mt-5 w-full block text-center py-2.5 rounded-xl bg-slate-100 hover:bg-brand-primary hover:text-white text-slate-700 font-bold text-xs transition-all">
+            Agendar Sueroterapia
+          </a>
+        </div>
+
+        <!-- Servicio: Canalización de Vías -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">🩺</span>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 bg-teal-50 text-brand-primary rounded-full">Procedimiento</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 font-display">Canalización de Vías Periféricas</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Instalación de accesos venosos con catéteres seguros para infusión continua de sueros, antibióticos o alimentación parenteral en el hogar.
+            </p>
+          </div>
+          <a href="https://wa.me/584245690079?text=Hola,%20solicito%20canalizaci%C3%B3n%20de%20v%C3%ADa%20perif%C3%A9rica%20a%20domicilio" target="_blank" class="mt-5 w-full block text-center py-2.5 rounded-xl bg-slate-100 hover:bg-brand-primary hover:text-white text-slate-700 font-bold text-xs transition-all">
+            Solicitar Vía Periférica
+          </a>
+        </div>
+
+        <!-- Servicio: Drenaje de Abscesos -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">✂️</span>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 bg-amber-50 text-amber-700 rounded-full">Cirugía Menor</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 font-display">Drenaje de Abscesos Cutáneos</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Descompresión, incisión y drenaje estéril de abscesos, forúnculos y quistes infectados con anestesia local para alivio inmediato del dolor.
+            </p>
+          </div>
+          <a href="https://wa.me/584245690079?text=Hola,%20solicito%20evaluaci%C3%B3n%20para%20drenaje%20de%20absceso" target="_blank" class="mt-5 w-full block text-center py-2.5 rounded-xl bg-slate-100 hover:bg-brand-primary hover:text-white text-slate-700 font-bold text-xs transition-all">
+            Consultar Procedimiento
+          </a>
+        </div>
+
+        <!-- Servicio: Procedimientos Menores / Puntos -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">🧵</span>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 bg-teal-50 text-brand-primary rounded-full">Cirugía Menor</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 font-display">Suturas y Retiro de Puntos</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Sutura de heridas superficiales por caídas o cortes accidentales, curaciones quirúrgicas y retiro de puntos o grapas con material descartable estéril.
+            </p>
+          </div>
+          <a href="https://wa.me/584245690079?text=Hola,%20solicito%20sutura%20o%20retiro%20de%20puntos%20a%20domicilio" target="_blank" class="mt-5 w-full block text-center py-2.5 rounded-xl bg-slate-100 hover:bg-brand-primary hover:text-white text-slate-700 font-bold text-xs transition-all">
+            Solicitar Sutura / Puntos
+          </a>
+        </div>
+
+        <!-- Servicio: Certificados Médicos -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">📋</span>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 bg-teal-50 text-brand-primary rounded-full">Trámite</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 font-display">Certificados Médicos Oficiales</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Emisión de Certificados de Salud Vial (Licencia de Conducir), certificados médicos escolares, pre-empleo y evaluaciones físicas integrales.
+            </p>
+          </div>
+          <a href="https://wa.me/584245690079?text=Hola,%20necesito%20un%20certificado%20m%C3%A9dico%20oficial%20en%20Valencia" target="_blank" class="mt-5 w-full block text-center py-2.5 rounded-xl bg-slate-100 hover:bg-brand-primary hover:text-white text-slate-700 font-bold text-xs transition-all">
+            Solicitar Certificado
+          </a>
+        </div>
+
+        <!-- Servicio: Telemedicina -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">📱</span>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 bg-cyan-50 text-cyan-700 rounded-full">Digital</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 font-display">Consulta por Videollamada</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Telemedicina inmediata para triaje previo, orientación clínica ante síntomas leves, segunda opinión y revisión e interpretación de exámenes de laboratorio.
+            </p>
+          </div>
+          <a href="https://wa.me/584245690079?text=Hola,%20deseo%20agendar%20una%20consulta%20m%C3%A9dica%20por%20videollamada" target="_blank" class="mt-5 w-full block text-center py-2.5 rounded-xl bg-slate-100 hover:bg-brand-primary hover:text-white text-slate-700 font-bold text-xs transition-all">
+            Agendar Telemedicina
+          </a>
+        </div>
+
+        <!-- Servicio: Control de Crónicos -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">❤️</span>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 bg-rose-50 text-rose-700 rounded-full">Preventivo</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 font-display">Control de Tensión y Diabetes</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Monitoreo continuo de Diabetes Mellitus e Hipertensión Arterial, ajuste de tratamientos orales o insulina y seguimiento de glicemia y tensión sin salir de casa.
+            </p>
+          </div>
+          <a href="https://wa.me/584245690079?text=Hola,%20deseo%20control%20de%20tensi%C3%B3n/diabetes%20a%20domicilio" target="_blank" class="mt-5 w-full block text-center py-2.5 rounded-xl bg-slate-100 hover:bg-brand-primary hover:text-white text-slate-700 font-bold text-xs transition-all">
+            Solicitar Control Crónico
+          </a>
+        </div>
+
+        <!-- Servicio 12: Acompañamiento Médico Aéreo -->
+        <div class="bg-white rounded-3xl p-6 border-2 border-amber-200 hover:border-amber-400 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">✈️</span>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 bg-amber-50 text-amber-800 rounded-full font-bold">Servicio VIP</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 font-display">Acompañamiento Médico Aéreo</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Escolta y asistencia médica profesional a bordo durante vuelos comerciales o privados (nacionales e internacionales). Monitoreo continuo de signos vitales, administración de fármacos, oxigenoterapia y soporte clínico integral puerta a puerta.
+            </p>
+          </div>
+          <a href="https://wa.me/584245690079?text=Hola%20MEDIHOME,%20solicito%20informaci%C3%B3n%20y%20cotizaci%C3%B3n%20sobre%20el%20servicio%20de%20Acompa%C3%B1amiento%20M%C3%A9dico%20A%C3%A9reo%20en%20vuelo" target="_blank" class="mt-5 w-full block text-center py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs transition-all shadow-md active:scale-95">
+            Cotizar Vuelo Asistido
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Custom / Unlimited Medical Services Card -->
+      <div class="mt-12 bg-gradient-to-r from-brand-deep via-teal-900 to-slate-900 rounded-3xl p-8 sm:p-10 text-white shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 border border-teal-500/30 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-brand-mint/10 rounded-full blur-3xl"></div>
+        <div class="space-y-3 text-center md:text-left relative z-10">
+          <div class="inline-flex items-center gap-2 bg-brand-mint/20 border border-brand-mint/30 px-3.5 py-1 rounded-full text-xs font-bold text-brand-mint">
+            <span>✨ Procedimientos Médicos a Medida</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-bold font-display text-white">¿Necesitas un procedimiento o atención no listada aquí?</h3>
+          <p class="text-xs sm:text-sm text-slate-200 max-w-2xl leading-relaxed">
+            Nuestro equipo médico y de enfermería está completamente facultado y equipado para llevar a cabo una extensa gama de intervenciones clínicas, tomas de muestras, colocación de esquemas de tratamiento indicados por tu médico tratante, curaciones complejas y cuidados posoperatorios.
+          </p>
+        </div>
+        <a href="https://wa.me/584245690079?text=Hola%20MEDIHOME,%20necesito%20consultar%20por%20un%20procedimiento%20m%C3%A9dico%20espec%C3%ADfico" target="_blank" class="shrink-0 bg-brand-mint hover:bg-teal-300 text-slate-950 font-bold px-7 py-4 rounded-2xl text-xs sm:text-sm shadow-xl transition-all active:scale-95 flex items-center gap-2.5 relative z-10">
+          <span>🩺 Consultar mi Procedimiento</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.961.905 3.16.905h.004c3.182 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.77-5.768-5.771zm0-3.172c4.931 0 8.932 4.001 8.932 8.932 0 4.931-4.001 8.932-8.932 8.932-1.562 0-3.033-.404-4.321-1.112l-6.71 1.758 1.79-6.539c-.777-1.328-1.222-2.875-1.222-4.519 0-4.931 4.001-8.932 8.932-8.932z"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. SECCIÓN ESTRELLA: "SALUD SIN FRONTERAS" (Para hijos en el exterior) -->
+  <section id="salud-sin-fronteras" class="py-20 bg-gradient-to-br from-brand-deep via-slate-900 to-slate-950 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 bg-amber-500/20 text-amber-300 border border-amber-500/30 px-3.5 py-1 rounded-full text-xs font-bold uppercase">
+            ✈️ Programa Internacional Especial
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight text-white leading-tight">
+            Plan <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-teal-200 to-brand-mint">Salud Sin Fronteras</span>
+          </h2>
+          
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            ¿Vives en Estados Unidos, España, Chile o cualquier parte del mundo y te preocupa la salud de tus padres en Valencia? 
+            Nosotros somos tus ojos y manos médicas a su lado.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center shrink-0 font-bold text-sm">✓</div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Reporte Médico Digital por WhatsApp</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Tras cada visita a tus padres, te enviamos a ti un informe detallado con fotos, signos vitales y evolución clínica.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center shrink-0 font-bold text-sm">✓</div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Pagos Cómodos en Divisas</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Paga sin complicaciones vía Zelle, PayPal, Binance USDT o transferencia Banesco Panamá.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center shrink-0 font-bold text-sm">✓</div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Línea Directa de Urgencias 24/7</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Si a tus padres les ocurre un imprevisto de noche, acudimos a su casa sin que tengas que angustiarte a la distancia.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-wrap items-center gap-3">
+            <a href="https://wa.me/584245690079?text=Hola%20Lisa,%20estoy%20en%20el%20exterior%20y%20quiero%20contratar%20el%20Plan%20Salud%20Sin%20Fronteras%20para%20mis%20padres%20en%20Valencia%20(80$/mes)" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-bold px-8 py-4 rounded-2xl text-sm transition-all shadow-xl shadow-amber-500/20 active:scale-95">
+              <span>✈️ Contratar por 80$/mes</span>
+            </a>
+            <a href="planes_servicios.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-4 rounded-2xl text-sm transition-all border border-white/20">
+              <span>🌟 Ver Todos los Planes (Desde 15$) ➔</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column (Visual) -->
+        <div class="lg:col-span-6">
+          <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl p-2 bg-white/5 backdrop-blur-md">
+            <img src="catalogo_4_salud_sin_fronteras.jpg" alt="Atención al Adulto Mayor en Valencia" class="w-full h-[400px] object-cover rounded-2xl">
+            <div class="absolute bottom-6 left-6 right-6 bg-slate-950/90 backdrop-blur-md p-4 rounded-2xl border border-white/10 text-xs">
+              <div class="flex items-center justify-between text-amber-300 font-bold mb-1">
+                <span>Tranquilidad Familiar Garantizada</span>
+                <span>Valencia, Edo. Carabobo</span>
+              </div>
+              <p class="text-slate-300 text-[11px]">"Tú trabajas en el exterior, nosotros cuidamos de ellos con amor y profesionalismo médico en su hogar."</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. DIRECTORIO MÉDICO (Inspirado en Grupo IDET) -->
+  <section id="directorio" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-primary bg-brand-soft px-3 py-1 rounded-full">Profesionales Certificados</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 mt-3">Directorio de Médicos y Enfermeros</h2>
+        <p class="text-slate-600 text-sm mt-2">Personal colegiado ante el Colegio de Médicos del Estado Carabobo y debidamente registrado en el MPPS.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Doctor 1: Dr. Víctor Cedeño -->
+        <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div class="h-72 overflow-hidden relative">
+            <img src="dr_victor_cedeno.png" alt="Dr. Víctor Cedeño" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-4 right-4 bg-emerald-500 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-full shadow">Disponible 24H</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-slate-900 font-display">Dr. Víctor Cedeño</h3>
+            <p class="text-xs font-bold text-brand-primary">Médico Cirujano General • Coordinador Clínico y Urgencias</p>
+            
+            <div class="mt-4 pt-3 border-t border-slate-200 space-y-1.5 text-[11px] text-slate-500">
+              <p>📋 <strong class="text-slate-700">Colegio de Médicos Carabobo:</strong> Colegiado Activo</p>
+              <p>🏥 <strong class="text-slate-700">Registro MPPS:</strong> Certificado</p>
+              <p>🩺 <strong class="text-slate-700">Áreas:</strong> Urgencias domiciliarias 24H, estabilización clínica, procedimientos quirúrgicos menores, control de hipertensión, diabetes y sueroterapia.</p>
+            </div>
+
+            <a href="https://wa.me/584245690079?text=Hola,%20deseo%20solicitar%20atenci%C3%B3n%20con%20el%20Dr.%20V%C3%ADctor%20Cede%C3%B1o" target="_blank" class="mt-6 w-full block text-center bg-brand-primary hover:bg-brand-deep text-white font-bold py-2.5 rounded-xl text-xs transition-all shadow-md">
+              Consultar con el Dr. Víctor Cedeño
+            </a>
+          </div>
+        </div>
+
+        <!-- Doctor 2: Alejandra Ramones -->
+        <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div class="h-72 overflow-hidden relative">
+            <img src="dra_alejandra_ramones.png" alt="Alejandra Ramones" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-4 right-4 bg-emerald-500 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-full shadow">En Guardia</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-slate-900 font-display">Alejandra Ramones</h3>
+            <p class="text-xs font-bold text-brand-primary">Asistente Médico • Coordinación de Pacientes y Cuidados Clínicos</p>
+            
+            <div class="mt-4 pt-3 border-t border-slate-200 space-y-1.5 text-[11px] text-slate-500">
+              <p>🩺 <strong class="text-slate-700">Rol Clínico:</strong> Triaje médico inicial, preparación de insumos estériles y asistencia al Dr. Víctor Cedeño.</p>
+              <p>🏥 <strong class="text-slate-700">Atención:</strong> Asistencia en curaciones, apoyo en sueroterapia, monitoreo de signos vitales y seguimiento continuo al paciente.</p>
+              <p>💬 <strong class="text-slate-700">Atención 24/7:</strong> Coordinación directa de urgencias y orientación personalizada a pacientes y familiares.</p>
+            </div>
+
+            <a href="https://wa.me/584245690079?text=Hola,%20deseo%20solicitar%20atenci%C3%B3n%20con%20la%20asistente%20Alejandra%20Ramones" target="_blank" class="mt-6 w-full block text-center bg-brand-primary hover:bg-brand-deep text-white font-bold py-2.5 rounded-xl text-xs transition-all shadow-md">
+              Consultar con la Asistente Médico Alejandra Ramones
+            </a>
+          </div>
+        </div>
+
+        <!-- Professional 3 (Enfermería) -->
+        <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-brand-primary shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div class="h-64 bg-gradient-to-br from-brand-deep to-teal-800 flex items-center justify-center p-6 text-center text-white relative">
+            <div>
+              <span class="text-5xl">💉</span>
+              <h4 class="text-sm font-bold mt-2 text-white">Equipo de Enfermería</h4>
+              <p class="text-[11px] text-teal-200">Técnicas Asépticas Avanzadas</p>
+            </div>
+            <span class="absolute top-4 right-4 bg-teal-400 text-slate-950 text-[10px] font-bold uppercase px-2.5 py-1 rounded-full shadow">Equipo Móvil</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-slate-900 font-display">Lic. en Enfermería Móvil</h3>
+            <p class="text-xs font-bold text-brand-primary">Cuidados Especiales y Terapias Endovenosas</p>
+            
+            <div class="mt-4 pt-3 border-t border-slate-200 space-y-1.5 text-[11px] text-slate-500">
+              <p>📋 <strong class="text-slate-700">Colegio de Enfermeros Carabobo:</strong> Registrados</p>
+              <p>🏥 <strong class="text-slate-700">Protocolo:</strong> Bioseguridad y asepsia estricta</p>
+              <p>🩺 <strong class="text-slate-700">Áreas:</strong> Sondas, sueros, curas de escaras y vías.</p>
+            </div>
+
+            <a href="https://wa.me/584245690079?text=Hola,%20deseo%20solicitar%20servicio%20de%20enfermer%C3%ADa%20a%20domicilio" target="_blank" class="mt-6 w-full block text-center bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 rounded-xl text-xs transition-all shadow-md">
+              Solicitar Enfermería
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7.5 TESTIMONIOS Y EXPERIENCIAS REALES EN VALENCIA (Prueba Social) -->
+  <section id="testimonios" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-primary bg-brand-soft border border-brand-mint/40 px-3.5 py-1.5 rounded-full">
+          Experiencias Reales • Confianza en Casa
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 mt-3">
+          Historias de Pacientes y Familias que Atendemos
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">
+          La satisfacción, el alivio y la dignidad de nuestros pacientes en Valencia son nuestro mayor compromiso ético.
+        </p>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center gap-1 text-amber-400 text-sm">
+              ★★★★★
+            </div>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+              "El Dr. Víctor Cedeño atendió a mi mamá durante una crisis hipertensiva a las 11:30 PM. Su serenidad, respeto y calidez nos devolvieron la calma de inmediato. Llegó en menos de 25 minutos a El Trigal y nos dejó el récipe y las indicaciones claras. No tuvimos que someter a mamá al estrés de una emergencia de clínica."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-teal-100 text-brand-deep flex items-center justify-center font-bold text-xs">
+              MP
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-slate-900">Lic. María Eugenia Parra</h4>
+              <p class="text-[11px] text-slate-500">Urb. El Trigal Norte • Familiar</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center gap-1 text-amber-400 text-sm">
+              ★★★★★
+            </div>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+              "Vivir en Miami y saber que mis padres de 79 y 82 años están en Valencia solía darme mucha angustia. Con el Plan Salud Sin Fronteras de MEDIHOME, recibo los informes médicos detallados por WhatsApp con fotos y lecturas de glucosa tras cada visita. Es la mejor inversión por su salud y mi paz mental."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs">
+              CM
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-slate-900">Ing. Carlos Morales</h4>
+              <p class="text-[11px] text-brand-primary font-semibold">Salud Sin Fronteras (Miami ➔ Prebo)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center gap-1 text-amber-400 text-sm">
+              ★★★★★
+            </div>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+              "La Asistente Médico Alejandra Ramones realizó la curación postquirúrgica y el retiro de puntos de mi esposo tras su operación. Una técnica aséptica impecable, abrió todo el material estéril nuevo en nuestra presencia y nos explicó paso a paso la evolución de la herida. Profesionalismo de primer nivel."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center font-bold text-xs">
+              EV
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-slate-900">Dra. Elena Villalobos</h4>
+              <p class="text-[11px] text-slate-500">Urb. El Parral • Paciente y Colega</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sello de Bioseguridad y Transparencia Clínica -->
+      <div class="mt-14 bg-white rounded-3xl p-8 border border-slate-200 shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-teal-100 text-brand-deep flex items-center justify-center text-2xl shrink-0">
+              🛡️
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">Insumos 100% Descartables</h4>
+              <p class="text-xs text-slate-500 mt-0.5">Jeringas, gasas, sondas y catéteres abiertos frente al paciente.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-2xl shrink-0">
+              📋
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">Personal Colegiado y Verificado</h4>
+              <p class="text-xs text-slate-500 mt-0.5">Registro MPPS y Colegio de Médicos de Carabobo en cada récipe.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-800 flex items-center justify-center text-2xl shrink-0">
+              🔒
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">Seguimiento Post-Atención</h4>
+              <p class="text-xs text-slate-500 mt-0.5">Control médico y monitoreo de evolución directamente por WhatsApp.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-5 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-slate-500 text-center sm:text-left">
+            🔒 <strong>Garantía de transparencia:</strong> Emitimos récipe médico certificado con sellos oficiales y código QR aceptado en toda la red farmacéutica de Valencia.
+          </p>
+          <button onclick="openRecipeModal()" class="shrink-0 inline-flex items-center gap-2 bg-slate-100 hover:bg-brand-primary hover:text-white text-slate-800 font-bold px-4 py-2 rounded-xl text-xs transition-all border border-slate-200">
+            <span>📄 Ver Modelo de Récipe Digital Oficial</span>
+            <span>➔</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. COTIZADOR INTERACTIVO Y ZONAS DE VALENCIA -->
+  <section id="cotizador" class="py-16 bg-brand-soft/50 border-y border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-xl">
+        <div class="text-center mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-primary bg-brand-soft px-3 py-1 rounded-full">Calculadora Rápida</span>
+          <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-2">Consulta tu Servicio y Tiempo de Llegada</h2>
+          <p class="text-xs text-slate-500 mt-1">Selecciona el procedimiento y tu urbanización en Valencia para coordinar</p>
+        </div>
+
+        <div class="space-y-5">
+          <!-- Select Service -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Selecciona el Servicio Médico:</label>
+            <select id="calc-service" class="w-full bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-xl p-3 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none">
+              <option value="Emergencia Médica a Domicilio 24H">🚨 Emergencia Médica a Domicilio 24H</option>
+              <option value="Consulta Médica General en Casa">🩺 Consulta Médica General en Casa</option>
+              <option value="Sueroterapia e Hidratación Endovenosa">💧 Sueroterapia e Hidratación Endovenosa</option>
+              <option value="Cambio o Colocación de Sonda Vesical">🔄 Cambio o Colocación de Sonda Vesical</option>
+              <option value="Curación de Heridas o Escaras">🩹 Curación de Heridas o Escaras</option>
+              <option value="Administración de Medicamentos EV / IM">💉 Administración de Medicamentos EV / IM</option>
+              <option value="Plan Salud Sin Fronteras (Para Padres)">🌍 Plan Salud Sin Fronteras (Para Padres)</option>
+              <option value="Acompañamiento Médico Aéreo (Vuelo Asistido)">✈️ Acompañamiento Médico Aéreo (Vuelo Asistido)</option>
+              <option value="Certificado Médico Oficial">📋 Certificado Médico Oficial</option>
+            </select>
+          </div>
+
+          <!-- Select Location -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Tu Urbanización en Valencia:</label>
+            <select id="calc-zone" class="w-full bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-xl p-3 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none">
+              <option value="El Parral / Prebo / La Ceiba">El Parral / Prebo (I y II) / La Ceiba</option>
+              <option value="El Trigal (Norte, Sur) / La Trigaleña">El Trigal (Norte, Sur) / La Trigaleña</option>
+              <option value="Guaparo / La Viña / Los Nísperos">Guaparo / La Viña / Los Nísperos</option>
+              <option value="Municipio San Diego">Municipio San Diego (El Remanso, etc.)</option>
+              <option value="Municipio Naguanagua (Tazajal, Mañongo)">Municipio Naguanagua (Tazajal, Mañongo)</option>
+              <option value="El Bosque / Guataparo / Valles de Camoruco">El Bosque / Guataparo / Valles de Camoruco</option>
+              <option value="Otra zona de Valencia">Otra zona de Valencia (Consultar)</option>
+            </select>
+          </div>
+
+          <!-- Result Box -->
+          <div class="bg-brand-soft border border-brand-mint/40 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+            <div>
+              <p class="text-xs font-bold text-brand-deep">✓ Cobertura Médica Activa</p>
+              <p class="text-[11px] text-slate-600">Tiempo estimado de traslado: <strong class="text-slate-900">25 a 45 minutos</strong></p>
+            </div>
+            <button onclick="requestQuote()" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl text-xs transition-all shadow-md shadow-emerald-600/20 whitespace-nowrap active:scale-95">
+              Confirmar por WhatsApp ➔
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. PREGUNTAS FRECUENTES (FAQ) -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-3 py-1 rounded-full">Respuestas Rápidas</span>
+        <h2 class="text-3xl font-bold font-display text-slate-900 mt-2">Preguntas Frecuentes</h2>
+      </div>
+
+      <div class="space-y-4 text-sm">
+        
+        <details class="bg-slate-50 rounded-2xl p-5 border border-slate-200 group">
+          <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between">
+            <span>¿En qué consiste el Plan Salud Sin Fronteras para quienes viven fuera de Venezuela?</span>
+            <span class="text-brand-primary group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-slate-600 mt-3 text-xs leading-relaxed">
+            Es un programa diseñado para hijos en el exterior que desean garantizar el cuidado médico de sus padres en Valencia. Incluye visitas programadas de control, cobertura de urgencias 24/7, emisión de récipes y un reporte médico detallado enviado al WhatsApp del hijo en el extranjero con fotos y signos vitales. Los pagos se realizan cómodamente vía Zelle, PayPal, Binance USDT o Banesco Panamá.
+          </p>
+        </details>
+
+        <details class="bg-slate-50 rounded-2xl p-5 border border-slate-200 group">
+          <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between">
+            <span>¿Qué equipos e insumos lleva el médico al domicilio?</span>
+            <span class="text-brand-primary group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-slate-600 mt-3 text-xs leading-relaxed">
+            Cada profesional asiste con un maletín clínico equipado con tensiómetro, oxímetro de pulso, glucómetro, estetoscopio, termómetro digital, kits descartables estériles, material de curación, jeringas y medicamentos de emergencia para estabilización inmediata.
+          </p>
+        </details>
+
+        <details class="bg-slate-50 rounded-2xl p-5 border border-slate-200 group">
+          <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between">
+            <span>¿Atienden emergencias durante la madrugada?</span>
+            <span class="text-brand-primary group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-slate-600 mt-3 text-xs leading-relaxed">
+            Sí. Mantenemos guardia médica activa las 24 horas del día, los 365 días del año. Puedes comunicarte directamente a nuestras líneas telefónicas o vía WhatsApp en cualquier momento.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. FOOTER -->
+  <footer class="bg-slate-950 text-white pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="md:col-span-1 space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-14 h-14 bg-white rounded-2xl p-1.5 flex items-center justify-center shadow-lg">
+              <img src="logo.png" alt="Logo" class="w-full h-full object-contain">
+            </div>
+            <span class="text-2xl font-bold font-display text-white">MEDIHOME</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Servicios médicos integrales a domicilio en Valencia, Edo. Carabobo. Comprometidos con la salud, el bienestar y la dignidad de cada paciente.
+          </p>
+          <p class="text-[11px] text-amber-400 font-semibold">
+            MEDIHOME © Marca Registrada
+          </p>
+        </div>
+
+        <!-- Col 2: Servicios y Conócenos -->
+        <div>
+          <h4 class="text-sm font-bold text-white mb-3 font-display">Navegación & Servicios</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#conocenos" class="hover:text-white transition-colors text-brand-mint font-semibold">★ Conócenos</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Emergencias Médicas 24H</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Sueroterapia e Hidratación</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Cambio de Sonda Vesical</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Curaciones de Escaras</a></li>
+            <li><a href="#salud-sin-fronteras" class="hover:text-white transition-colors">Plan Salud Sin Fronteras</a></li>
+            <li><a href="#directorio" class="hover:text-white transition-colors">Equipo Médico</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Cobertura -->
+        <div>
+          <h4 class="text-sm font-bold text-white mb-3 font-display">Zonas en Valencia</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li>El Parral & Prebo (I y II)</li>
+            <li>El Trigal (Norte / Sur) & Trigaleña</li>
+            <li>Guaparo & La Viña</li>
+            <li>Municipio San Diego</li>
+            <li>Municipio Naguanagua</li>
+            <li>El Bosque & La Ceiba</li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contacto -->
+        <div>
+          <h4 class="text-sm font-bold text-white mb-3 font-display">Líneas de Atención 24/7</h4>
+          <div class="space-y-2 text-xs text-slate-300">
+            <p>💬 <a href="https://wa.me/584245690079" target="_blank" class="hover:text-emerald-400 font-mono font-bold text-emerald-300">WhatsApp: 0424-5690079</a></p>
+            <p>📞 <a href="tel:04121233287" class="hover:text-teal-400 font-mono font-bold">Urgencias: 0412-1233287</a></p>
+            <p>📞 <a href="tel:04144417118" class="hover:text-teal-400 font-mono font-bold">Emergencias: 0414-4417118</a></p>
+            <p class="text-slate-400 mt-2">📍 Valencia, Edo. Carabobo, Venezuela</p>
+            <div class="pt-2">
+              <a href="https://wa.me/584245690079?text=Hola%20Lisa,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20MediHome" target="_blank" class="inline-flex items-center gap-1.5 text-brand-mint text-[11px] hover:underline font-semibold">
+                Chatear con Lisa en WhatsApp ➔
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sub Footer -->
+      <div class="pt-8 pb-16 sm:pb-0 text-center text-xs text-slate-500">
+        MEDIHOME • Todos los derechos reservados • Diseñado para la excelencia médica en el hogar • Valencia, Carabobo 2026
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Actions (Emergencia Directa + WhatsApp) - Solo Desktop/Tablet para no chocar con la barra móvil -->
+  <div class="hidden sm:flex fixed bottom-6 right-6 z-50 flex-col items-end gap-3">
+    <!-- Quick Call 24H Button -->
+    <a href="tel:04121233287" title="Llamar a Emergencias Médicas 24H" class="bg-rose-600 hover:bg-rose-700 text-white w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 active:scale-95 border-2 border-white">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+    
+    <!-- WhatsApp Action Button -->
+    <a href="https://wa.me/584245690079?text=Hola%20MEDIHOME,%20solicito%20atenci%C3%B3n%20m%C3%A9dica%20a%20domicilio%20en%20Valencia" target="_blank" title="Escribir por WhatsApp" class="bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 active:scale-95 border-2 border-white">
+      <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.961.905 3.16.905h.004c3.182 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.77-5.768-5.771zm0-3.172c4.931 0 8.932 4.001 8.932 8.932 0 4.931-4.001 8.932-8.932 8.932-1.562 0-3.033-.404-4.321-1.112l-6.71 1.758 1.79-6.539c-.777-1.328-1.222-2.875-1.222-4.519 0-4.931 4.001-8.932 8.932-8.932z"/></svg>
+    </a>
+  </div>
+
+  <!-- Modal 1: Video Presentación del Equipo Médico -->
+  <div id="modal-video-medicos" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-teal-500/30 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative">
+      
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between bg-slate-950/60">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-brand-primary text-white flex items-center justify-center font-bold text-xs shadow-md">
+            ▶
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-bold text-white font-display">Mensaje de Bienvenida del Equipo Médico</h3>
+            <p class="text-[11px] text-teal-300">Dr. Víctor Cedeño (Médico Cirujano) y la Asistente Médico Alejandra Ramones</p>
+          </div>
+        </div>
+        <button onclick="closeVideoModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white flex items-center justify-center text-sm transition-all" aria-label="Cerrar modal">
+          ✕
+        </button>
+      </div>
+
+      <!-- Video Player Visual Area -->
+      <div class="p-4 sm:p-6 space-y-4">
+        <div class="relative bg-slate-950 rounded-2xl overflow-hidden aspect-video border border-slate-800 flex items-center justify-center group shadow-inner">
+          <img src="dr_victor_cedeno.png" alt="Dr. Víctor Cedeño y Alejandra Ramones" class="absolute inset-0 w-full h-full object-cover object-top opacity-55">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+          
+          <!-- Live simulation badge -->
+          <div class="absolute top-3 left-3 bg-rose-600/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full flex items-center gap-1.5 shadow">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+            <span>Mensaje Oficial</span>
+          </div>
+
+          <div class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-teal-300 text-[10px] font-semibold px-2.5 py-0.5 rounded-full border border-teal-500/20">
+            FHD 1080p • Valencia, Carabobo
+          </div>
+
+          <!-- Video Playback Overlay Controls -->
+          <div class="relative z-10 text-center px-4">
+            <button id="video-play-btn" onclick="toggleSimulatedPlayback()" class="w-16 h-16 rounded-full bg-brand-primary/95 hover:bg-brand-primary text-white flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all mx-auto mb-2 border-2 border-brand-mint/40 cursor-pointer">
+              <svg id="video-play-icon" class="w-7 h-7 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <p id="video-status-text" class="text-xs text-slate-200 font-medium drop-shadow">Haz clic para escuchar el mensaje clínico</p>
+          </div>
+
+          <!-- Timeline progress bar -->
+          <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-slate-950 to-transparent flex items-center gap-3 text-[11px] text-slate-300 font-mono">
+            <span id="video-time-cur">0:18</span>
+            <div class="flex-1 h-1.5 bg-white/20 rounded-full overflow-hidden cursor-pointer" onclick="scrubVideo(event)">
+              <div id="video-progress" class="h-full bg-brand-mint rounded-full w-2/5 transition-all duration-300"></div>
+            </div>
+            <span>0:45</span>
+            <span class="text-teal-400">🔊 HD</span>
+          </div>
+        </div>
+
+        <!-- Transcript & Speech Quote -->
+        <div class="bg-white/5 rounded-2xl p-4 border border-white/10 text-xs sm:text-sm text-slate-200 leading-relaxed italic">
+          <p class="text-slate-400 text-[11px] font-sans font-bold uppercase tracking-wider not-italic mb-1 text-brand-mint">
+            Transcripción del Mensaje Clínico:
+          </p>
+          "«Hola, somos el Dr. Víctor Cedeño y la Asistente Médico Alejandra Ramones en MEDIHOME. Sabemos que cuando un familiar enferma en casa, la rapidez, el trato humano y la seguridad clínica lo son todo. Llevamos a tu hogar equipos calibrados, insumos descartables de primer nivel y la tranquilidad de un diagnóstico certero a cualquier hora del día o de la noche. Estamos a un mensaje de distancia para cuidar de ti y de quienes más quieres en Valencia.»"
+        </div>
+
+        <!-- Doctor badges and CTAs -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+          <div class="text-[11px] text-slate-400 flex items-center gap-2">
+            <span>🩺 Colegio de Médicos Edo. Carabobo</span>
+            <span>•</span>
+            <span>MPPS Registrado</span>
+          </div>
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <button onclick="closeVideoModal()" class="w-1/2 sm:w-auto px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-all">
+              Cerrar
+            </button>
+            <a href="https://wa.me/584245690079?text=Hola%20MEDIHOME,%20acabo%20de%20ver%20el%20video%20de%20los%20doctores%20y%20deseo%20solicitar%20atenci%C3%B3n%20a%20domicilio" target="_blank" class="w-1/2 sm:w-auto px-5 py-2.5 rounded-xl bg-brand-mint hover:bg-teal-300 text-slate-950 font-bold text-xs transition-all shadow-lg text-center">
+              Solicitar Atención Médica
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal 2: Modelo de Récipe y Reporte Clínico Oficial -->
+  <div id="modal-recipe-oficial" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-2xl w-full my-auto overflow-hidden shadow-2xl relative border border-slate-200">
+      
+      <!-- Modal Top Bar -->
+      <div class="p-4 bg-slate-900 text-white flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="text-xl">📄</span>
+          <div>
+            <h3 class="text-sm sm:text-base font-bold font-display">Modelo de Récipe y Reporte Clínico Oficial</h3>
+            <p class="text-[11px] text-teal-300">Formato Homologado • Validez en Farmacias y Aseguradoras</p>
+          </div>
+        </div>
+        <button onclick="closeRecipeModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white flex items-center justify-center text-sm transition-all" aria-label="Cerrar modal">
+          ✕
+        </button>
+      </div>
+
+      <!-- Official Prescription Document View -->
+      <div class="p-5 sm:p-7 bg-slate-50 space-y-5">
+        
+        <!-- Recipe Sheet (Document Simulation) -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-slate-200 shadow-md relative overflow-hidden font-sans">
+          
+          <!-- Watermark -->
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
+            <span class="text-6xl sm:text-7xl font-black text-brand-deep transform -rotate-12 uppercase tracking-widest">MEDIHOME</span>
+          </div>
+
+          <!-- Document Header -->
+          <div class="flex flex-col sm:flex-row items-center justify-between pb-4 border-b-2 border-brand-primary/30 gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-brand-deep p-2 shrink-0">
+                <img src="logo.png" alt="MEDIHOME Logo" class="w-full h-full object-contain">
+              </div>
+              <div>
+                <h4 class="text-lg font-black text-brand-deep tracking-wider font-display">MEDIHOME</h4>
+                <p class="text-[10px] text-slate-500 font-semibold">ATENCIÓN MÉDICA DOMICILIARIA C.A. • RIF: J-50123984-2</p>
+                <p class="text-[9px] text-slate-400">Valencia, Edo. Carabobo • Emergencias 24H: 0412-1233287</p>
+              </div>
+            </div>
+            <div class="text-right sm:text-right text-xs">
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full border border-emerald-300">
+                ✓ HOMOLOGADO
+              </span>
+              <p class="text-[10px] text-slate-500 mt-1 font-mono">FOLIO: MH-VAL-2026-0841</p>
+            </div>
+          </div>
+
+          <!-- Physician Credentials -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 py-3 border-b border-slate-100 text-[11px] text-slate-600 bg-slate-50/70 p-3 rounded-xl mt-3">
+            <div>
+              <strong class="text-slate-800 block text-xs">Dr. Víctor Cedeño</strong>
+              <span>Médico Cirujano General</span>
+              <span class="block text-[10px] text-slate-500">M.P.P.S. 94821 • C.M.E.C. 18492</span>
+            </div>
+            <div>
+              <strong class="text-slate-800 block text-xs">Alejandra Ramones</strong>
+              <span>Asistente Médico</span>
+              <span class="block text-[10px] text-slate-500">Coordinación de Triaje y Cuidados Clínicos</span>
+            </div>
+          </div>
+
+          <!-- Patient & Diagnostic Details -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-3 text-xs text-slate-700">
+            <div>
+              <span class="text-[10px] text-slate-400 uppercase font-bold block">Paciente:</span>
+              <span class="font-semibold text-slate-900">Carmen R. Mendoza</span>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-400 uppercase font-bold block">Edad / C.I.:</span>
+              <span class="font-semibold text-slate-900">72 años • V-4.892.110</span>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-400 uppercase font-bold block">Fecha & Hora:</span>
+              <span class="font-semibold text-slate-900">Hoy • 24H Domicilio</span>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-400 uppercase font-bold block">Ubicación:</span>
+              <span class="font-semibold text-slate-900">El Parral, Valencia</span>
+            </div>
+          </div>
+
+          <!-- Vital Signs Strip -->
+          <div class="mt-3 bg-brand-soft/60 border border-brand-mint/40 rounded-xl p-2.5 flex items-center justify-between text-[11px] text-slate-700 font-mono">
+            <span><strong>T/A:</strong> 125/80 mmHg</span>
+            <span><strong>FC:</strong> 72 lpm</span>
+            <span><strong>SatO2:</strong> 98%</span>
+            <span><strong>Temp:</strong> 36.6 °C</span>
+            <span><strong>Glicemia:</strong> 104 mg/dL</span>
+          </div>
+
+          <!-- Rx Prescription Section -->
+          <div class="mt-4 pt-3 border-t border-slate-200">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl font-serif font-black text-brand-deep">℞</span>
+              <h5 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Prescripción e Indicaciones Médicas</h5>
+            </div>
+            <div class="space-y-2.5 text-xs text-slate-800 pl-4 border-l-2 border-brand-primary">
+              <div>
+                <p class="font-bold text-slate-900">1. Ceftriaxona 1g I.V. (Frasco ampolla)</p>
+                <p class="text-[11px] text-slate-600 pl-2">➔ Administrar vía endovenosa diluido en 100cc de Solución Fisiológica cada 24 horas por 5 días.</p>
+              </div>
+              <div>
+                <p class="font-bold text-slate-900">2. Omeprazol 40mg I.V. (Frasco ampolla)</p>
+                <p class="text-[11px] text-slate-600 pl-2">➔ Administrar vía endovenosa lenta cada mañana en ayunas.</p>
+              </div>
+              <div>
+                <p class="font-bold text-slate-900">3. Solución Fisiológica 0.9% 500cc</p>
+                <p class="text-[11px] text-slate-600 pl-2">➔ Infusión continua según indicación médica para mantenimiento hídrico.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stamp, Signature and QR Code -->
+          <div class="mt-6 pt-4 border-t-2 border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            
+            <!-- Doctor Signature & Stamp -->
+            <div class="text-center sm:text-left space-y-1">
+              <div class="inline-block relative">
+                <!-- Simulated Wet Stamp -->
+                <div class="w-36 h-14 border-2 border-teal-700/80 rounded-full flex flex-col items-center justify-center p-1 transform -rotate-2 bg-teal-50/40">
+                  <span class="text-[8px] font-bold text-teal-800 tracking-wider">MEDIHOME VALENCIA</span>
+                  <span class="text-[9px] font-black text-brand-deep">MÉDICO CIRUJANO</span>
+                  <span class="text-[7px] text-teal-700">COLEGIO DE MÉDICOS CARABOBO</span>
+                </div>
+              </div>
+              <p class="text-[10px] text-slate-500 italic mt-0.5">Firma y Sello Clínico Digitalizado</p>
+            </div>
+
+            <!-- QR Verification & Acceptance -->
+            <div class="flex items-center gap-3 bg-slate-100 p-2.5 rounded-xl border border-slate-200">
+              <div class="w-12 h-12 bg-white rounded-lg p-1 border border-slate-300 flex items-center justify-center shadow-xs">
+                <!-- SVG QR Mockup -->
+                <svg class="w-full h-full text-slate-900" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 2h2v4h-2v-4zm-4-4h2v2h-2v-2zm2 2h2v2h-2v-2zm2 0h2v2h-2v-2zm0-4h4v2h-4v-2zm-4 6h2v2h-2v-2z"/>
+                </svg>
+              </div>
+              <div class="text-[10px] text-slate-600">
+                <span class="font-bold text-emerald-700 block">QR de Validación Online</span>
+                <span>Aceptado en Farmatodo, Locatel, Redvital y farmacias aliadas.</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Bottom Actions -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+          <p class="text-xs text-slate-500">
+            💡 Cada consulta y procedimiento domiciliario incluye récipe sellado e informe clínico digital.
+          </p>
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <button onclick="window.print()" class="w-1/2 sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-all flex items-center justify-center gap-1.5">
+              <span>🖨️ Imprimir / Guardar PDF</span>
+            </button>
+            <a href="https://wa.me/584245690079?text=Hola%20MEDIHOME,%20necesito%20consulta%20m%C3%A9dica%20a%20domicilio%20con%20r%C3%A9cipe%20oficial" target="_blank" class="w-1/2 sm:w-auto px-5 py-2.5 rounded-xl bg-brand-primary hover:bg-brand-deep text-white font-bold text-xs transition-all shadow-md text-center">
+              Solicitar Consulta con Récipe
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts: Quick Quote Calculator + Hero 10s Carousel Slider + Modals -->
+  <script>
+    function requestQuote() {
+      const service = document.getElementById('calc-service').value;
+      const zone = document.getElementById('calc-zone').value;
+      const text = encodeURIComponent(`Hola MEDIHOME, deseo solicitar el servicio de "${service}" en la zona de "${zone}". ¿Me podrían confirmar disponibilidad y tarifa?`);
+      window.open(`https://wa.me/584245690079?text=${text}`, '_blank');
+    }
+
+    // Dynamic Hero Carousel (Rotación Automática cada 10 segundos)
+    let currentHeroSlide = 0;
+    let heroInterval = null;
+
+    function setHeroSlide(index) {
+      currentHeroSlide = index;
+      const slide0 = document.getElementById('hero-slide-0');
+      const slide1 = document.getElementById('hero-slide-1');
+      const dot0 = document.getElementById('hero-dot-0');
+      const dot1 = document.getElementById('hero-dot-1');
+
+      if (index === 0) {
+        if (slide0) { slide0.classList.remove('hidden'); slide0.classList.add('block'); }
+        if (slide1) { slide1.classList.remove('block'); slide1.classList.add('hidden'); }
+        if (dot0) { dot0.className = "w-3.5 h-3.5 rounded-full transition-all duration-300 bg-brand-primary ring-4 ring-brand-primary/20 scale-110"; }
+        if (dot1) { dot1.className = "w-3.5 h-3.5 rounded-full transition-all duration-300 bg-white border-2 border-slate-300 hover:border-brand-primary"; }
+      } else {
+        if (slide0) { slide0.classList.remove('block'); slide0.classList.add('hidden'); }
+        if (slide1) { slide1.classList.remove('hidden'); slide1.classList.add('block'); }
+        if (dot0) { dot0.className = "w-3.5 h-3.5 rounded-full transition-all duration-300 bg-white border-2 border-slate-300 hover:border-brand-primary"; }
+        if (dot1) { dot1.className = "w-3.5 h-3.5 rounded-full transition-all duration-300 bg-brand-primary ring-4 ring-brand-primary/20 scale-110"; }
+      }
+
+      // Reiniciar contador de 10 segundos tras interacción manual
+      clearInterval(heroInterval);
+      heroInterval = setInterval(() => {
+        setHeroSlide((currentHeroSlide + 1) % 2);
+      }, 10000);
+    }
+
+    // Video Modal Handlers
+    function openVideoModal() {
+      const modal = document.getElementById('modal-video-medicos');
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeVideoModal() {
+      const modal = document.getElementById('modal-video-medicos');
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+      if (isPlayingSim) toggleSimulatedPlayback();
+    }
+
+    // Prescription Modal Handlers
+    function openRecipeModal() {
+      const modal = document.getElementById('modal-recipe-oficial');
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeRecipeModal() {
+      const modal = document.getElementById('modal-recipe-oficial');
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Simulated Video Playback logic
+    let isPlayingSim = false;
+    let videoTimer = null;
+    let videoSeconds = 18;
+
+    function toggleSimulatedPlayback() {
+      isPlayingSim = !isPlayingSim;
+      const icon = document.getElementById('video-play-icon');
+      const text = document.getElementById('video-status-text');
+      const progress = document.getElementById('video-progress');
+      const curTime = document.getElementById('video-time-cur');
+
+      if (isPlayingSim) {
+        if (icon) icon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+        if (text) text.innerText = "Reproduciendo mensaje clínico de bienvenida...";
+        videoTimer = setInterval(() => {
+          videoSeconds++;
+          if (videoSeconds > 45) videoSeconds = 0;
+          if (curTime) curTime.innerText = `0:${videoSeconds < 10 ? '0' : ''}${videoSeconds}`;
+          if (progress) progress.style.width = `${(videoSeconds / 45) * 100}%`;
+        }, 1000);
+      } else {
+        if (icon) icon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+        if (text) text.innerText = "Pausado. Haz clic para reanudar";
+        clearInterval(videoTimer);
+      }
+    }
+
+    function scrubVideo(event) {
+      const rect = event.currentTarget.getBoundingClientRect();
+      const clickX = event.clientX - rect.left;
+      const pct = Math.max(0, Math.min(1, clickX / rect.width));
+      videoSeconds = Math.round(pct * 45);
+      const curTime = document.getElementById('video-time-cur');
+      const progress = document.getElementById('video-progress');
+      if (curTime) curTime.innerText = `0:${videoSeconds < 10 ? '0' : ''}${videoSeconds}`;
+      if (progress) progress.style.width = `${pct * 100}%`;
+    }
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const burger = document.getElementById('hamburger-icon');
+      const close = document.getElementById('close-icon');
+      if (menu) {
+        menu.classList.toggle('hidden');
+        if (burger && close) {
+          burger.classList.toggle('hidden');
+          close.classList.toggle('hidden');
+        }
+      }
+    }
+
+    // Iniciar temporizador automático de 10 segundos al cargar
+    document.addEventListener('DOMContentLoaded', () => {
+      heroInterval = setInterval(() => {
+        setHeroSlide((currentHeroSlide + 1) % 2);
+      }, 10000);
+    });
+  </script>
+
+  <!-- FIXED MOBILE BOTTOM CONVERSION BAR (Visible solo en celulares < sm) -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 px-3 py-2 sm:hidden shadow-[0_-4px_20px_rgba(0,0,0,0.12)] flex items-center justify-between gap-2.5">
+    <a href="tel:04121233287" class="flex-1 flex items-center justify-center gap-1.5 bg-rose-600 hover:bg-rose-700 active:scale-95 text-white py-3 px-2 rounded-xl text-xs font-bold shadow-md transition-all text-center">
+      <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      <span>Llamar Urgencia</span>
+    </a>
+    <a href="https://wa.me/584245690079?text=Hola%20MEDIHOME,%20solicito%20atenci%C3%B3n%20m%C3%A9dica%20a%20domicilio%20en%20Valencia" target="_blank" class="flex-1 flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white py-3 px-2 rounded-xl text-xs font-bold shadow-md transition-all text-center">
+      <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.961.905 3.16.905h.004c3.182 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.77-5.768-5.771zm0-3.172c4.931 0 8.932 4.001 8.932 8.932 0 4.931-4.001 8.932-8.932 8.932-1.562 0-3.033-.404-4.321-1.112l-6.71 1.758 1.79-6.539c-.777-1.328-1.222-2.875-1.222-4.519 0-4.931 4.001-8.932 8.932-8.932z"/></svg>
+      <span>WhatsApp Médico</span>
+    </a>
+  </div>
+
+</body>
+</html>

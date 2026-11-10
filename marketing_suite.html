@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDIHOME • Suite de Marketing Médico y Flyers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              deep: '#006680',
+              primary: '#008aa6',
+              accent: '#0ea5b9',
+              mint: '#5cbfac',
+              light: '#ecf9f7',
+              navy: '#0e212c',
+              cream: '#f8fcfc'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #print-area, #print-area * {
+        visibility: visible;
+      }
+      #print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen font-sans antialiased">
+
+  <!-- Top Navigation Bar -->
+  <header class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center shadow-lg shadow-teal-900/30">
+          <img src="logo.png" alt="MediHome Logo" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <h1 class="text-xl font-bold font-display tracking-tight text-white flex items-center gap-2">
+            MEDIHOME <span class="text-xs bg-brand-primary/20 text-brand-mint border border-brand-mint/30 px-2 py-0.5 rounded-full font-medium">Marketing Suite Pro</span>
+          </h1>
+          <p class="text-xs text-slate-400">Atención Médica a Domicilio • Valencia, Edo. Carabobo</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="sitio_web_medihome.html" class="no-print flex items-center gap-1.5 bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white px-3 py-2 rounded-xl text-xs font-bold transition-all shadow-md shadow-emerald-500/20">
+          🌐 Web Oficial
+        </a>
+        <a href="whatsapp_bot_simulator.html" class="no-print flex items-center gap-1.5 bg-teal-600/20 hover:bg-teal-600/30 text-teal-300 border border-teal-500/30 px-3 py-2 rounded-xl text-xs font-bold transition-all">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Bot WhatsApp
+        </a>
+        <a href="planes_servicios.html" class="no-print flex items-center gap-1.5 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 border border-emerald-500/30 px-3 py-2 rounded-xl text-xs font-bold transition-all">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+          Planes por Edades
+        </a>
+        <button onclick="window.print()" class="no-print flex items-center gap-2 bg-brand-primary hover:bg-brand-deep text-white px-3.5 py-2 rounded-xl text-xs font-semibold transition-all shadow-md shadow-brand-primary/30 active:scale-95">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+    
+    <!-- Hero Alert Banner -->
+    <div class="bg-gradient-to-r from-brand-deep/60 via-slate-900 to-slate-900 border border-brand-mint/30 rounded-2xl p-6 mb-8 shadow-xl">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-mint bg-brand-mint/10 border border-brand-mint/20 px-3 py-1 rounded-full mb-2">
+            Campana de Lanzamiento 2026
+          </span>
+          <h2 class="text-2xl font-bold text-white font-display">Flyers y Material Publicitario de Alta Definición</h2>
+          <p class="text-sm text-slate-300 mt-1 max-w-2xl">
+            Material publicitario profesional diseñado con los colores corporativos de <strong class="text-brand-mint">MEDIHOME</strong>, los 11 servicios médicos a domicilio, números de contacto para Valencia, Carabobo y sellos de marca registrada.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <a href="#flyers-galeria" class="bg-brand-mint/20 hover:bg-brand-mint/30 text-brand-mint border border-brand-mint/40 text-xs font-bold px-4 py-2.5 rounded-xl transition-all">
+            Ver Diseños HD
+          </a>
+          <a href="#copys-marketing" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold px-4 py-2.5 rounded-xl transition-all">
+            Textos para WhatsApp e Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Navigation Tabs -->
+    <div id="flyers-galeria" class="mb-6 flex flex-wrap gap-3 border-b border-slate-800 pb-4">
+      <button onclick="switchTab('master')" id="tab-master" class="tab-btn active bg-brand-primary text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg transition-all">
+        1. Flyer Ultra HD Mejorado (Doctor y 11 Servicios)
+      </button>
+      <button onclick="switchTab('editorial')" id="tab-editorial" class="tab-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-semibold px-5 py-2.5 rounded-xl transition-all">
+        2. Master Flyer Domicilio 24H
+      </button>
+      <button onclick="switchTab('instagram')" id="tab-instagram" class="tab-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-semibold px-5 py-2.5 rounded-xl transition-all">
+        3. Post Instagram Feed (1:1 Cuadrado)
+      </button>
+      <button onclick="switchTab('story')" id="tab-story" class="tab-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-semibold px-5 py-2.5 rounded-xl transition-all">
+        4. Story / Estado WhatsApp (9:16)
+      </button>
+    </div>
+
+    <!-- TAB 1: ULTRA HD IMPROVED FLYER VIEW -->
+    <div id="view-master" class="tab-view block">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Flyer Image Preview (Print Area) -->
+        <div class="lg:col-span-8 bg-slate-950 p-4 rounded-3xl border border-slate-800 shadow-2xl flex flex-col items-center">
+          <div class="w-full flex items-center justify-between px-2 mb-3">
+            <span class="text-xs font-semibold text-brand-mint flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-brand-mint animate-pulse"></span>
+              Ultra Alta Definición: 1600 x 2000 px (300 DPI)
+            </span>
+            <a href="flyer_medihome_ultra_hd_mejorado.png" download="Flyer_MEDIHOME_Ultra_HD_Mejorado.png" class="inline-flex items-center gap-2 text-xs font-bold text-brand-mint bg-brand-mint/10 hover:bg-brand-mint/20 border border-brand-mint/30 px-3 py-1.5 rounded-lg transition-all">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              Descargar Flyer Ultra HD
+            </a>
+          </div>
+          
+          <div id="print-area" class="w-full max-w-2xl bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
+            <img src="flyer_medihome_ultra_hd_mejorado.png" alt="Flyer MEDIHOME Ultra HD Mejorado" class="w-full h-auto object-contain">
+          </div>
+        </div>
+
+        <!-- Details & Features Sidebar -->
+        <div class="lg:col-span-4 space-y-6">
+          
+          <!-- Card Details -->
+          <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+            <h3 class="text-lg font-bold text-white font-display flex items-center gap-2 mb-4">
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-mint"></span>
+              Especificaciones de Marca
+            </h3>
+            
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center justify-between py-2 border-b border-slate-800/80">
+                <span class="text-slate-400">Empresa:</span>
+                <span class="font-bold text-brand-mint">MEDIHOME</span>
+              </div>
+              <div class="flex items-center justify-between py-2 border-b border-slate-800/80">
+                <span class="text-slate-400">Cobertura:</span>
+                <span class="font-semibold text-white">Valencia, Edo. Carabobo</span>
+              </div>
+              <div class="flex items-center justify-between py-2 border-b border-slate-800/80">
+                <span class="text-slate-400">Línea Telefónica 1:</span>
+                <a href="tel:04121233287" class="font-mono font-bold text-teal-400 hover:underline">0412-1233287</a>
+              </div>
+              <div class="flex items-center justify-between py-2 border-b border-slate-800/80">
+                <span class="text-slate-400">Línea Telefónica 2:</span>
+                <a href="tel:04144417118" class="font-mono font-bold text-teal-400 hover:underline">0414-4417118</a>
+              </div>
+              <div class="flex items-center justify-between py-2 border-b border-slate-800/80">
+                <span class="text-slate-400">Disponibilidad:</span>
+                <span class="font-bold text-rose-400">Emergencias 24 Horas</span>
+              </div>
+              <div class="flex items-center justify-between py-2">
+                <span class="text-slate-400">Propiedad Intelectual:</span>
+                <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">© Derechos Registrados</span>
+              </div>
+            </div>
+
+            <!-- Paleta de Colores Oficial -->
+            <div class="mt-6 pt-4 border-t border-slate-800">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Paleta de Colores de su Logo</h4>
+              <div class="grid grid-cols-4 gap-2">
+                <div class="text-center">
+                  <div class="w-full h-10 rounded-lg bg-[#006680] shadow-sm mb-1 border border-white/10"></div>
+                  <span class="text-[10px] font-mono text-slate-400">#006680</span>
+                </div>
+                <div class="text-center">
+                  <div class="w-full h-10 rounded-lg bg-[#008aa6] shadow-sm mb-1 border border-white/10"></div>
+                  <span class="text-[10px] font-mono text-slate-400">#008AA6</span>
+                </div>
+                <div class="text-center">
+                  <div class="w-full h-10 rounded-lg bg-[#5cbfac] shadow-sm mb-1 border border-white/10"></div>
+                  <span class="text-[10px] font-mono text-slate-400">#5CBFAC</span>
+                </div>
+                <div class="text-center">
+                  <div class="w-full h-10 rounded-lg bg-[#ecf9f7] shadow-sm mb-1 border border-slate-700"></div>
+                  <span class="text-[10px] font-mono text-slate-400">#ECF9F7</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
+            <h4 class="text-sm font-bold text-white mb-2">Acciones Rápidas</h4>
+            <a href="flyer_completo_11_servicios_hd.png" download class="w-full flex items-center justify-center gap-2 bg-brand-primary hover:bg-brand-deep text-white font-bold py-3 px-4 rounded-xl text-sm transition-all shadow-lg shadow-teal-900/40">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              Descargar Imagen Master (1400x2000)
+            </a>
+            <button onclick="window.print()" class="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold py-3 px-4 rounded-xl text-sm transition-all border border-slate-700">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+              Imprimir Volante / Guardar en PDF
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: INSTAGRAM SQUARE -->
+    <div id="view-instagram" class="tab-view hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-8 bg-slate-950 p-4 rounded-3xl border border-slate-800 shadow-2xl flex flex-col items-center">
+          <div class="w-full flex items-center justify-between px-2 mb-3">
+            <span class="text-xs font-semibold text-slate-400">Formato: 1080 x 1080 px (Instagram / Facebook Feed)</span>
+            <a href="post_instagram_cuadrado.png" download="Post_Instagram_MEDIHOME.png" class="inline-flex items-center gap-2 text-xs font-bold text-brand-mint bg-brand-mint/10 hover:bg-brand-mint/20 border border-brand-mint/30 px-3 py-1.5 rounded-lg transition-all">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              Descargar Post HD
+            </a>
+          </div>
+          <div class="w-full max-w-xl bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
+            <img src="post_instagram_cuadrado.png" alt="Post Instagram MediHome" class="w-full h-auto object-contain">
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 space-y-6">
+          <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+            <h3 class="text-lg font-bold text-white font-display mb-2">Ideal para Redes Sociales</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Diseñado específicamente para formato de cuadrícula (1:1), optimizado para lectura en pantallas de celulares sin necesidad de hacer zoom.
+            </p>
+            <div class="mt-4 pt-4 border-t border-slate-800 space-y-2 text-xs text-slate-400">
+              <p>✓ Legibilidad garantizada en teléfonos móviles</p>
+              <p>✓ Teléfonos y llamada a la acción en gran tamaño</p>
+              <p>✓ Logotipo MEDIHOME en alta resolución</p>
+            </div>
+            <a href="post_instagram_cuadrado.png" download class="mt-6 w-full flex items-center justify-center gap-2 bg-brand-primary hover:bg-brand-deep text-white font-bold py-3 px-4 rounded-xl text-sm transition-all shadow-lg">
+              Descargar para Instagram Feed
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: STORY / WHATSAPP STATUS -->
+    <div id="view-story" class="tab-view hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7 bg-slate-950 p-4 rounded-3xl border border-slate-800 shadow-2xl flex flex-col items-center">
+          <div class="w-full flex items-center justify-between px-2 mb-3">
+            <span class="text-xs font-semibold text-slate-400">Formato: 1080 x 1920 px (9:16 Vertical)</span>
+            <a href="story_whatsapp_instagram.png" download="Story_WhatsApp_MEDIHOME.png" class="inline-flex items-center gap-2 text-xs font-bold text-brand-mint bg-brand-mint/10 hover:bg-brand-mint/20 border border-brand-mint/30 px-3 py-1.5 rounded-lg transition-all">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              Descargar Story HD
+            </a>
+          </div>
+          <div class="w-full max-w-sm bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
+            <img src="story_whatsapp_instagram.png" alt="Story WhatsApp MediHome" class="w-full h-auto object-contain">
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+            <h3 class="text-lg font-bold text-white font-display mb-2">Formato Estados de WhatsApp e Historias</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Ocupa el 100% de la pantalla vertical del usuario. Es el formato más efectivo en Venezuela para compartir con pacientes, familiares y grupos vecinales de WhatsApp.
+            </p>
+            <div class="mt-4 pt-4 border-t border-slate-800 space-y-2 text-xs text-slate-400">
+              <p>✓ Formato vertical 9:16 sin cortes</p>
+              <p>✓ Listo para Estados de WhatsApp y Reels de Instagram</p>
+              <p>✓ Incluye los 11 servicios médicos numerados</p>
+            </div>
+            <a href="story_whatsapp_instagram.png" download class="mt-6 w-full flex items-center justify-center gap-2 bg-brand-primary hover:bg-brand-deep text-white font-bold py-3 px-4 rounded-xl text-sm transition-all shadow-lg">
+              Descargar para Estados de WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: AI CONCEPT POSTER -->
+    <div id="view-ai-concept" class="tab-view hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-8 bg-slate-950 p-4 rounded-3xl border border-slate-800 shadow-2xl flex flex-col items-center">
+          <div class="w-full flex items-center justify-between px-2 mb-3">
+            <span class="text-xs font-semibold text-slate-400">Póster Fotográfico Conceptual en Español</span>
+            <a href="flyer_medihome_espanol.jpg" download="Poster_Conceptual_MEDIHOME.jpg" class="inline-flex items-center gap-2 text-xs font-bold text-brand-mint bg-brand-mint/10 hover:bg-brand-mint/20 border border-brand-mint/30 px-3 py-1.5 rounded-lg transition-all">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              Descargar Póster HD
+            </a>
+          </div>
+          <div class="w-full max-w-xl bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
+            <img src="flyer_medihome_espanol.jpg" alt="Póster Conceptual MediHome" class="w-full h-auto object-contain">
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 space-y-6">
+          <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+            <h3 class="text-lg font-bold text-white font-display mb-2">Póster Publicitario Conceptual</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Diseño publicitario generado con inteligencia artificial, estilo valla publicitaria y revista médica, con su logo oficial y enfoque en calidez médica.
+            </p>
+            <a href="flyer_medihome_espanol.jpg" download class="mt-6 w-full flex items-center justify-center gap-2 bg-brand-primary hover:bg-brand-deep text-white font-bold py-3 px-4 rounded-xl text-sm transition-all shadow-lg">
+              Descargar Póster Conceptual
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKETING COPY & STRATEGY SECTION -->
+    <div id="copys-marketing" class="mt-16 pt-12 border-t border-slate-800">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-white font-display">Textos Publicitarios y Estrategia de Lanzamiento</h2>
+        <p class="text-sm text-slate-400 mt-1">Copias listas para enviar por WhatsApp y publicar en redes sociales en Valencia, Carabobo.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Copy WhatsApp -->
+        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.961.905 3.16.905h.004c3.182 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.77-5.768-5.771zm0-3.172c4.931 0 8.932 4.001 8.932 8.932 0 4.931-4.001 8.932-8.932 8.932-1.562 0-3.033-.404-4.321-1.112l-6.71 1.758 1.79-6.539c-.777-1.328-1.222-2.875-1.222-4.519 0-4.931 4.001-8.932 8.932-8.932z"/></svg>
+                Mensaje de Difusión WhatsApp
+              </span>
+              <button onclick="copyToClipboard('copy-wa')" class="text-xs text-brand-mint hover:text-white bg-slate-800 hover:bg-slate-700 px-3 py-1 rounded-lg transition-all font-semibold">
+                Copiar Texto
+              </button>
+            </div>
+            <pre id="copy-wa" class="text-xs text-slate-300 font-sans whitespace-pre-wrap leading-relaxed bg-slate-900 p-4 rounded-xl border border-slate-800/80">🚨 ¿Necesitas atención médica en casa sin esperar en clínicas?
+
+En *MEDIHOME* llevamos la mejor atención médica directamente a la comodidad de tu hogar en *Valencia, Edo. Carabobo*. 
+
+👨‍⚕️ *Nuestros Servicios Especializados a Domicilio:*
+1️⃣ Servicio médico de emergencia 24 Horas
+2️⃣ Administración de medicamentos (Intravenoso EV / Intramuscular IM)
+3️⃣ Curaciones y cuidados de heridas y úlceras
+4️⃣ Cambio y manejo de sonda (vesical / nasogástrica)
+5️⃣ Sueroterapia e hidratación endovenosa
+6️⃣ Canalización de vías periféricas
+7️⃣ Drenaje de abscesos cutáneos con técnica aséptica
+8️⃣ Procedimientos menores (suturas y retiro de puntos)
+9️⃣ Certificados médicos oficiales (conducir, laboral, escolar)
+🔟 Consulta médica por videollamada / Telemedicina
+1️⃣1️⃣ Control integral de Diabetes Mellitus e Hipertensión Arterial
+
+🏠 *Atención 100% en tu hogar con insumos estériles y médicos calificados.*
+
+📲 *¡Guarda nuestros números para cualquier emergencia o consulta!*
+📞 0412-1233287
+📞 0414-4417118
+📍 Valencia, Edo. Carabobo</pre>
+          </div>
+        </div>
+
+        <!-- Copy Instagram -->
+        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-pink-400 bg-pink-400/10 px-3 py-1 rounded-full flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.13-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                Post de Instagram / Redes Sociales
+              </span>
+              <button onclick="copyToClipboard('copy-ig')" class="text-xs text-brand-mint hover:text-white bg-slate-800 hover:bg-slate-700 px-3 py-1 rounded-lg transition-all font-semibold">
+                Copiar Texto
+              </button>
+            </div>
+            <pre id="copy-ig" class="text-xs text-slate-300 font-sans whitespace-pre-wrap leading-relaxed bg-slate-900 p-4 rounded-xl border border-slate-800/80">Tu salud y la de tu familia merecen la mejor atención, sin salir de casa 🩺✨
+
+En @MediHome estamos listos para atenderte en Valencia, Edo. Carabobo con nuestro equipo médico calificado y protocolos clínicos de máxima seguridad.
+
+🏥 Servicios a Domicilio:
+🚑 Emergencias médicas 24 horas
+💉 Inyecciones intramusculares e intravenosas
+🩹 Curación de heridas, escaras y úlceras
+🔄 Cambio y retiro de sondas
+💧 Sueroterapia e hidratación endovenosa
+🩺 Canalización de vías periféricas
+✂️ Drenaje de abscesos
+🧵 Procedimientos menores (suturas y puntos)
+📋 Certificados médicos oficiales
+📱 Telemedicina y videollamadas
+❤️ Control de hipertensión y diabetes
+
+📍 Cobertura directa en toda Valencia y zonas metropolitanas.
+📞 Contáctanos 24/7: 0412-1233287 / 0414-4417118
+
+#ValenciaCarabobo #MedicinaADomicilio #SaludValencia #MediHome #EmergenciasMedicas #SanDiegoCarabobo #Naguanagua #MedicosValencia #SueroterapiaValencia</pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Recommendations for Trademark & Brand Protection -->
+    <div class="mt-12 bg-slate-950 p-6 rounded-2xl border border-amber-500/30">
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-amber-300 font-display">Consejo de Protección Legal del Logo y Marca MEDIHOME</h3>
+          <p class="text-sm text-slate-300 mt-1 leading-relaxed">
+            Como mencionaron que poseen los derechos de autor de su logotipo y desean protegerlo contra competidores:
+          </p>
+          <ul class="mt-2 space-y-1.5 text-xs text-slate-400 list-disc list-inside">
+            <li>En Venezuela, tramite el registro formal ante el <strong>SAPI (Servicio Autónomo de la Propiedad Intelectual)</strong> en la clase correspondiente a servicios médicos (Clase 44 de la Clasificación Internacional de Niza).</li>
+            <li>En todos sus materiales, folletos y perfiles de Instagram/WhatsApp, mantenga la leyenda visible: <em>"MEDIHOME © Marca Registrada - Prohibida su copia o reproducción no autorizada"</em> (ya incluida en sus flyers).</li>
+            <li>Guarde el archivo original con fecha de creación y metadatos como comprobante de autoría previa.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="mt-16 border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+    MEDIHOME • Suite de Marketing y Comunicación Médica • Valencia, Edo. Carabobo • 2026
+  </footer>
+
+  <script>
+    function switchTab(tabKey) {
+      document.querySelectorAll('.tab-view').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-brand-primary', 'text-white');
+        btn.classList.add('bg-slate-800', 'text-slate-300');
+      });
+
+      const selectedView = document.getElementById('view-' + tabKey);
+      const selectedBtn = document.getElementById('tab-' + tabKey);
+
+      if (selectedView) selectedView.classList.remove('hidden');
+      if (selectedBtn) {
+        selectedBtn.classList.add('active', 'bg-brand-primary', 'text-white');
+        selectedBtn.classList.remove('bg-slate-800', 'text-slate-300');
+      }
+    }
+
+    function copyToClipboard(elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("¡Texto copiado al portapapeles exitosamente!");
+      }).catch(err => {
+        console.error('Error al copiar:', err);
+      });
+    }
+  </script>
+</body>
+</html>

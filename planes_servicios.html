@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDIHOME • Planes y Servicios Médicos a Domicilio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              deep: '#006680',
+              primary: '#008aa6',
+              mint: '#5cbfac',
+              soft: '#ecf9f7',
+              navy: '#0e212c'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen font-sans antialiased selection:bg-brand-mint selection:text-brand-navy">
+
+  <!-- Header -->
+  <header class="bg-slate-950/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center shadow-lg">
+          <img src="logo.png" alt="MediHome Logo" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <span class="text-xl font-bold font-display tracking-tight text-white flex items-center gap-2">
+            MEDIHOME <span class="text-[11px] bg-brand-mint/20 text-brand-mint border border-brand-mint/30 px-2 py-0.5 rounded-full">Valencia</span>
+          </span>
+          <p class="text-xs text-slate-400">Atención Médica a Domicilio 24 Horas</p>
+        </div>
+      </div>
+      <a href="https://wa.me/584245690079?text=Hola%20MEDIHOME,%20solicito%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" class="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-950 px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-lg shadow-emerald-500/20">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.961.905 3.16.905h.004c3.182 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.77-5.768-5.771zm0-3.172c4.931 0 8.932 4.001 8.932 8.932 0 4.931-4.001 8.932-8.932 8.932-1.562 0-3.033-.404-4.321-1.112l-6.71 1.758 1.79-6.539c-.777-1.328-1.222-2.875-1.222-4.519 0-4.931 4.001-8.932 8.932-8.932z"/></svg>
+        WhatsApp Directo
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-6 pt-12 pb-8 text-center">
+    <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-mint bg-brand-mint/10 border border-brand-mint/20 px-3 py-1 rounded-full mb-4">
+      Cuidado Médico Integral Para Todas Las Edades
+    </span>
+    <h1 class="text-3xl md:text-5xl font-bold font-display text-white tracking-tight leading-tight max-w-4xl mx-auto">
+      La Mejor Atención Médica, <br class="hidden sm:block">
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-mint to-teal-200">
+        Directamente en tu Hogar en Valencia
+      </span>
+    </h1>
+    <p class="text-slate-300 text-sm md:text-base mt-4 max-w-2xl mx-auto">
+      Diseñamos planes a la medida para bebés, adultos activos, pacientes crónicos y adultos mayores. Olvídate de traslados incómodos y salas de espera.
+    </p>
+
+    <!-- Emergency Floating Bar -->
+    <div class="mt-8 bg-rose-950/40 border border-rose-500/40 rounded-2xl p-4 max-w-2xl mx-auto flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 text-left">
+        <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center font-bold text-lg shrink-0">
+          24h
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-rose-200">¿Tienes una Urgencia Médica Ahora?</h4>
+          <p class="text-xs text-rose-300/80">Médico general y de urgencias disponible para acudir a tu domicilio.</p>
+        </div>
+      </div>
+      <a href="tel:04121233287" class="bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl whitespace-nowrap transition-all shadow-md shadow-rose-900/50">
+        Llamar Ya
+      </a>
+    </div>
+  </section>
+
+  <!-- Planes Segmentados por Edades -->
+  <section class="max-w-6xl mx-auto px-6 py-10">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl font-bold font-display text-white">Nuestros Planes y Servicios Especializados</h2>
+      <p class="text-xs text-slate-400 mt-1">Selecciona la opción ideal para ti o tu ser querido</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- PLAN 1: CONEXIÓN MÉDICA 15$ -->
+      <div class="bg-slate-950 rounded-3xl border border-slate-800 p-6 flex flex-col justify-between relative overflow-hidden group hover:border-teal-500 transition-all shadow-xl">
+        <div>
+          <div class="w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800">
+            <img src="catalogo_5_certificados_telemedicina.jpg" alt="Telemedicina" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-teal-400 bg-teal-400/10 px-2.5 py-1 rounded-md">
+              Plan 1 • Digital
+            </span>
+            <div class="text-right">
+              <span class="text-2xl font-black text-white font-display">15$</span>
+              <span class="text-[10px] text-slate-400">/mes</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white font-display">Plan Conexión Médica</h3>
+          <p class="text-xs text-slate-400 mt-1">El respaldo de un médico general en tu teléfono a cualquier hora del día o noche.</p>
+          
+          <ul class="mt-4 space-y-2 text-xs text-slate-300">
+            <li class="flex items-center gap-2">✓ Telemedicina 24/7 ilimitada (chat y videollamada)</li>
+            <li class="flex items-center gap-2">✓ Orientación de dosis y síntomas agudos</li>
+            <li class="flex items-center gap-2">✓ Interpretación de laboratorios e imágenes</li>
+            <li class="flex items-center gap-2">✓ Récipes médicos oficiales con código QR</li>
+          </ul>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800">
+          <a href="https://wa.me/584245690079?text=Hola%20Lisa,%20deseo%20afiliarme%20al%20Plan%201%20Conexi%C3%B3n%20M%C3%A9dica%20(15$/mes)" class="w-full block text-center bg-slate-800 hover:bg-slate-700 text-teal-300 font-bold py-2.5 rounded-xl text-xs transition-all border border-slate-700">
+            Afiliarme por 15$/mes
+          </a>
+        </div>
+      </div>
+
+      <!-- PLAN 2: ALIVIO INMEDIATO 30$ -->
+      <div class="bg-slate-950 rounded-3xl border border-slate-800 p-6 flex flex-col justify-between relative overflow-hidden group hover:border-emerald-500 transition-all shadow-xl">
+        <div>
+          <div class="w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800">
+            <img src="catalogo_1_consulta.jpg" alt="Urgencias y Consulta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-md">
+              Plan 2 • Guardia
+            </span>
+            <div class="text-right">
+              <span class="text-2xl font-black text-white font-display">30$</span>
+              <span class="text-[10px] text-slate-400">/mes</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white font-display">Plan Alivio Inmediato</h3>
+          <p class="text-xs text-slate-400 mt-1">Tranquilidad médica total con cobertura de emergencias domiciliarias 24/7.</p>
+          
+          <ul class="mt-4 space-y-2 text-xs text-slate-300">
+            <li class="flex items-center gap-2">✓ Telemedicina 24/7 ilimitada</li>
+            <li class="flex items-center gap-2">✓ Atención de Urgencia Médica a Domicilio 24/7</li>
+            <li class="flex items-center gap-2">✓ Traslado prioritario de la unidad médica</li>
+            <li class="flex items-center gap-2">✓ Sin costos ocultos de despacho en Valencia</li>
+          </ul>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800">
+          <a href="https://wa.me/584245690079?text=Hola%20Lisa,%20deseo%20afiliarme%20al%20Plan%202%20Alivio%20Inmediato%20(30$/mes)" class="w-full block text-center bg-slate-800 hover:bg-slate-700 text-emerald-300 font-bold py-2.5 rounded-xl text-xs transition-all border border-slate-700">
+            Afiliarme por 30$/mes
+          </a>
+        </div>
+      </div>
+
+      <!-- PLAN 3: CUIDADO HOGAR 40$ -->
+      <div class="bg-slate-950 rounded-3xl border border-brand-mint/40 p-6 flex flex-col justify-between relative overflow-hidden group hover:border-brand-mint transition-all shadow-xl">
+        <div class="absolute top-2 right-2 bg-brand-mint/20 text-brand-mint text-[9px] font-bold uppercase px-2 py-0.5 rounded border border-brand-mint/30">
+          Popular Familias
+        </div>
+        <div>
+          <div class="w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800">
+            <img src="portada_whatsapp_natural.jpg" alt="Cuidado Hogar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-mint bg-brand-mint/10 px-2.5 py-1 rounded-md">
+              Plan 3 • Preventivo
+            </span>
+            <div class="text-right">
+              <span class="text-2xl font-black text-brand-mint font-display">40$</span>
+              <span class="text-[10px] text-slate-400">/mes</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white font-display">Plan Cuidado Hogar</h3>
+          <p class="text-xs text-slate-400 mt-1">Telemedicina, urgencias 24/7 y evaluación médica presencial en tu sala.</p>
+          
+          <ul class="mt-4 space-y-2 text-xs text-slate-300">
+            <li class="flex items-center gap-2">✓ Telemedicina 24/7 ilimitada</li>
+            <li class="flex items-center gap-2">✓ Urgencia Médica a Domicilio 24/7</li>
+            <li class="flex items-center gap-2">✓ Evaluación Médica Completa en Casa programada</li>
+            <li class="flex items-center gap-2">✓ Chequeo de signos vitales, tensión y glicemia</li>
+          </ul>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800">
+          <a href="https://wa.me/584245690079?text=Hola%20Lisa,%20deseo%20afiliarme%20al%20Plan%203%20Cuidado%20Hogar%20(40$/mes)" class="w-full block text-center bg-brand-primary hover:bg-brand-deep text-white font-bold py-2.5 rounded-xl text-xs transition-all shadow-md shadow-brand-primary/20">
+            Afiliarme por 40$/mes
+          </a>
+        </div>
+      </div>
+
+      <!-- PLAN 4: BIENESTAR INTEGRAL 60$ -->
+      <div class="bg-slate-950 rounded-3xl border border-cyan-500/40 p-6 flex flex-col justify-between relative overflow-hidden group hover:border-cyan-400 transition-all shadow-xl">
+        <div>
+          <div class="w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800">
+            <img src="catalogo_2_sueroterapia.jpg" alt="Bienestar Integral" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-400/10 px-2.5 py-1 rounded-md">
+              Plan 4 • Todo Incluido
+            </span>
+            <div class="text-right">
+              <span class="text-2xl font-black text-cyan-300 font-display">60$</span>
+              <span class="text-[10px] text-slate-400">/mes</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white font-display">Plan Bienestar Integral</h3>
+          <p class="text-xs text-slate-400 mt-1">Cobertura clínica absoluta: visitas, urgencias, laboratorios y enfermería.</p>
+          
+          <ul class="mt-4 space-y-2 text-xs text-slate-300">
+            <li class="flex items-center gap-2">✓ Telemedicina 24/7 + Urgencias a Domicilio 24/7</li>
+            <li class="flex items-center gap-2">✓ Evaluación Médica en Casa programada</li>
+            <li class="flex items-center gap-2">✓ Laboratorios clínicos de control de rutina</li>
+            <li class="flex items-center gap-2">✓ Procedimientos de enfermería (sueros, vías, curaciones)</li>
+          </ul>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800">
+          <a href="https://wa.me/584245690079?text=Hola%20Lisa,%20deseo%20afiliarme%20al%20Plan%204%20Bienestar%20Integral%20(60$/mes)" class="w-full block text-center bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2.5 rounded-xl text-xs transition-all shadow-md shadow-cyan-600/20">
+            Afiliarme por 60$/mes
+          </a>
+        </div>
+      </div>
+
+      <!-- PLAN 5: PEQUEÑOS PROTEGIDOS (PEDIÁTRICO) 50$ -->
+      <div class="bg-slate-950 rounded-3xl border border-indigo-500/40 p-6 flex flex-col justify-between relative overflow-hidden group hover:border-indigo-400 transition-all shadow-xl">
+        <div>
+          <div class="w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800">
+            <img src="atencion_pediatrica.jpg" alt="Plan Pediátrico" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-400 bg-indigo-400/10 px-2.5 py-1 rounded-md">
+              Plan 5 • Pediátrico
+            </span>
+            <div class="text-right">
+              <span class="text-2xl font-black text-indigo-300 font-display">50$</span>
+              <span class="text-[10px] text-slate-400">/mes</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white font-display">Plan Pequeños Protegidos</h3>
+          <p class="text-xs text-slate-400 mt-1">Cuidado con amor y sin salas de espera para la salud de tus hijos en casa.</p>
+          
+          <ul class="mt-4 space-y-2 text-xs text-slate-300">
+            <li class="flex items-center gap-2">✓ Telemedicina 24/7 para dudas de fiebre o cuadros virales</li>
+            <li class="flex items-center gap-2">✓ Urgencias Médicas a Domicilio 24/7</li>
+            <li class="flex items-center gap-2">✓ Consulta de Niño Sano en casa</li>
+            <li class="flex items-center gap-2">✓ Constancia Médica Escolar y de aptitud oficial</li>
+          </ul>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800">
+          <a href="https://wa.me/584245690079?text=Hola%20Lisa,%20deseo%20afiliarme%20al%20Plan%205%20Pedi%C3%A1trico%20Peque%C3%B1os%20Protegidos%20(50$/mes)" class="w-full block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 rounded-xl text-xs transition-all shadow-md shadow-indigo-600/20">
+            Afiliarme por 50$/mes
+          </a>
+        </div>
+      </div>
+
+      <!-- PLAN 6: SALUD SIN FRONTERAS 80$ -->
+      <div class="bg-gradient-to-b from-brand-deep/30 to-slate-950 rounded-3xl border border-amber-500/50 p-6 flex flex-col justify-between relative overflow-hidden group hover:border-amber-400 transition-all shadow-xl">
+        <div class="absolute top-2 right-2 bg-amber-500/20 text-amber-300 text-[9px] font-bold uppercase px-2 py-0.5 rounded border border-amber-500/30">
+          ⭐ Muy Solicitado
+        </div>
+        <div>
+          <div class="w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800">
+            <img src="catalogo_4_salud_sin_fronteras.jpg" alt="Salud Sin Fronteras" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">
+              Plan 6 • Diáspora & Familia
+            </span>
+            <div class="text-right">
+              <span class="text-2xl font-black text-amber-300 font-display">80$</span>
+              <span class="text-[10px] text-slate-400">/mes</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white font-display">Plan Salud Sin Fronteras</h3>
+          <p class="text-xs text-slate-400 mt-1">Cuidamos de tus padres en Valencia mientras vives en el exterior. Pagos vía Zelle / Binance.</p>
+          
+          <ul class="mt-4 space-y-2 text-xs text-slate-300">
+            <li class="flex items-center gap-2">✓ Telemedicina 24/7 + Urgencias Médicas 24/7</li>
+            <li class="flex items-center gap-2">✓ 2 Visitas Médicas Programadas al mes en casa</li>
+            <li class="flex items-center gap-2">✓ Laboratorios o procedimientos médicos incluidos</li>
+            <li class="flex items-center gap-2">✓ Reporte fotográfico y evolución clínica por WhatsApp</li>
+          </ul>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800">
+          <a href="https://wa.me/584245690079?text=Hola%20Lisa,%20estoy%20en%20el%20exterior%20y%20deseo%20contratar%20el%20Plan%20Salud%20Sin%20Fronteras%20para%20mis%20padres%20en%20Valencia%20(80$/mes)" class="w-full block text-center bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all shadow-md shadow-amber-500/20">
+            Contratar por 80$/mes
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cobertura y Métodos de Pago -->
+  <section class="max-w-6xl mx-auto px-6 py-8">
+    <div class="bg-slate-950 border border-slate-800 rounded-3xl p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h3 class="text-xl font-bold font-display text-white mb-2">Cobertura en Toda la Gran Valencia</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Nuestros médicos y enfermeros se desplazan con maletines de atención médica y kits estériles a:
+        </p>
+        <div class="grid grid-cols-2 gap-2 mt-4 text-xs text-slate-300">
+          <div class="flex items-center gap-1.5"><span class="text-brand-mint font-bold">📍</span> El Parral & Prebo</div>
+          <div class="flex items-center gap-1.5"><span class="text-brand-mint font-bold">📍</span> El Trigal (Norte / Sur)</div>
+          <div class="flex items-center gap-1.5"><span class="text-brand-mint font-bold">📍</span> Guaparo & La Viña</div>
+          <div class="flex items-center gap-1.5"><span class="text-brand-mint font-bold">📍</span> San Diego (Toda la zona)</div>
+          <div class="flex items-center gap-1.5"><span class="text-brand-mint font-bold">📍</span> Naguanagua & Tazajal</div>
+          <div class="flex items-center gap-1.5"><span class="text-brand-mint font-bold">📍</span> El Bosque & La Ceiba</div>
+        </div>
+      </div>
+
+      <div class="border-t md:border-t-0 md:border-l border-slate-800 pt-6 md:pt-0 md:pl-8">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Métodos de Pago Flexibles</h4>
+        <div class="grid grid-cols-3 gap-2 text-center text-xs">
+          <div class="bg-slate-900 border border-slate-800 p-2.5 rounded-xl text-slate-300">
+            <span class="block font-bold text-white">Pago Móvil</span>
+            <span class="text-[10px] text-slate-400">Bs. BCV</span>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 p-2.5 rounded-xl text-slate-300">
+            <span class="block font-bold text-emerald-400">Efectivo $</span>
+            <span class="text-[10px] text-slate-400">En domicilio</span>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 p-2.5 rounded-xl text-slate-300">
+            <span class="block font-bold text-cyan-400">Zelle</span>
+            <span class="text-[10px] text-slate-400">USA</span>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 p-2.5 rounded-xl text-slate-300">
+            <span class="block font-bold text-yellow-400">Binance</span>
+            <span class="text-[10px] text-slate-400">USDT</span>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 p-2.5 rounded-xl text-slate-300">
+            <span class="block font-bold text-blue-400">PayPal</span>
+            <span class="text-[10px] text-slate-400">Internacional</span>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 p-2.5 rounded-xl text-slate-300">
+            <span class="block font-bold text-teal-400">Banesco</span>
+            <span class="text-[10px] text-slate-400">Panamá</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+    MEDIHOME • Atención Médica a Domicilio • Valencia, Edo. Carabobo • WhatsApp: 0424-5690079 • Urgencias: 0412-1233287 / 0414-4417118
+  </footer>
+
+</body>
+</html>

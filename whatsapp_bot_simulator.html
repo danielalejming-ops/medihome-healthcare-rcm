@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDIHOME • Simulador de Bot WhatsApp (Lisa 🩺)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .chat-bg {
+      background-color: #0b141a;
+      background-image: radial-gradient(#1f2c34 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between">
+
+  <!-- Top Bar -->
+  <header class="bg-slate-900 border-b border-slate-800 px-6 py-4">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all text-xs font-semibold flex items-center gap-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+          Volver a la Web
+        </a>
+        <h1 class="text-sm md:text-base font-bold text-white flex items-center gap-2">
+          Simulador Interactivo • <span class="text-teal-400">Lisa de MEDIHOME 🩺</span>
+        </h1>
+      </div>
+      <span class="text-[11px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded-full font-bold animate-pulse">
+        Lisa en Línea 24/7
+      </span>
+    </div>
+  </header>
+
+  <!-- Chat Screen Wrapper -->
+  <main class="flex-1 max-w-xl w-full mx-auto p-4 flex flex-col justify-center">
+    
+    <!-- Phone Mockup Frame -->
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col h-[750px]">
+      
+      <!-- WhatsApp Header -->
+      <div class="bg-[#1f2c34] px-4 py-3 flex items-center justify-between border-b border-slate-800 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-white p-0.5 overflow-hidden border border-teal-500">
+            <img src="logo.png" alt="MediHome Logo" class="w-full h-full object-contain">
+          </div>
+          <div>
+            <h2 class="text-sm font-bold text-white flex items-center gap-1.5">
+              Lisa • MEDIHOME Valencia
+              <svg class="w-3.5 h-3.5 text-teal-400 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </h2>
+            <p id="bot-status" class="text-[11px] text-emerald-400 font-medium">en línea</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 text-slate-300">
+          <a href="tel:04121233287" title="Llamada Directa de Emergencia" class="p-2 hover:bg-slate-700/50 rounded-full">
+            <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Chat Messages Container -->
+      <div id="messages-container" class="flex-1 chat-bg p-4 overflow-y-auto space-y-3">
+        <!-- Messages will be injected by JavaScript -->
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="bg-[#1f2c34]/90 backdrop-blur px-3 py-2 border-t border-slate-800 flex gap-2 overflow-x-auto text-[11px] scrollbar-none">
+        <button onclick="handleQuickResponse('1')" class="bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/40 px-3 py-1.5 rounded-full font-bold whitespace-nowrap active:scale-95 transition-all">
+          🚨 1. Urgencia 24H
+        </button>
+        <button onclick="handleQuickResponse('2')" class="bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 border border-teal-500/40 px-3 py-1.5 rounded-full font-semibold whitespace-nowrap active:scale-95 transition-all">
+          2. Médico en Casa
+        </button>
+        <button onclick="handleQuickResponse('3')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-full font-medium whitespace-nowrap active:scale-95 transition-all">
+          3. Sueros / Curaciones
+        </button>
+        <button onclick="handleQuickResponse('4')" class="bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 px-3 py-1.5 rounded-full font-bold whitespace-nowrap active:scale-95 transition-all">
+          🌟 4. Ver los 6 Planes
+        </button>
+        <button onclick="handleQuickResponse('plan 5')" class="bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 px-3 py-1.5 rounded-full font-semibold whitespace-nowrap active:scale-95 transition-all">
+          👶 Plan Pediátrico 50$
+        </button>
+        <button onclick="handleQuickResponse('plan 6')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 px-3 py-1.5 rounded-full font-semibold whitespace-nowrap active:scale-95 transition-all">
+          ✈️ Salud Sin Fronteras 80$
+        </button>
+        <button onclick="handleQuickResponse('7')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-full font-medium whitespace-nowrap active:scale-95 transition-all">
+          7. Cobertura & Pagos
+        </button>
+      </div>
+
+      <!-- Chat Input Field -->
+      <div class="bg-[#1f2c34] p-3 flex items-center gap-2 border-t border-slate-800">
+        <input 
+          id="user-input" 
+          type="text" 
+          placeholder="Escribe 'planes', '1', 'urgencia' o nota de voz..." 
+          class="flex-1 bg-[#2a3942] text-slate-100 placeholder-slate-400 px-4 py-2.5 rounded-xl text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+          onkeydown="if(event.key === 'Enter') sendMessage()"
+        />
+        <button onclick="sendMessage()" class="w-10 h-10 rounded-xl bg-teal-600 hover:bg-teal-500 text-white flex items-center justify-center transition-all shadow-md active:scale-95">
+          <svg class="w-4 h-4 rotate-90" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Instruction Help -->
+    <div class="mt-4 text-center text-xs text-slate-400 flex items-center justify-center gap-4">
+      <span>💡 Escribe <strong>1, 2, 3, 4 (planes), 5, 6, 7</strong> o preguntas libres.</span>
+      <button onclick="resetChat()" class="text-teal-400 hover:underline">Reiniciar Chat</button>
+    </div>
+
+  </main>
+
+  <footer class="text-center py-4 border-t border-slate-900 text-xs text-slate-600">
+    MEDIHOME • Asistente Virtual Lisa • Valencia, Carabobo 2026
+  </footer>
+
+  <script>
+    const container = document.getElementById('messages-container');
+    const input = document.getElementById('user-input');
+    const botStatus = document.getElementById('bot-status');
+
+    const BOT_RESPONSES = {
+      menu: `🏥 *¡Hola! Te saluda Lisa, asistente médica de MEDIHOME Valencia* 🩺
+_Atención médica profesional en la comodidad de tu hogar 24/7._
+
+¿En qué te puedo colaborar hoy? Responde con el número de tu opción:
+
+1️⃣ *🚨 Emergencia Médica Inmediata* (Atención prioritaria 24H)
+2️⃣ *👨‍⚕️ Solicitar Médico a Domicilio* (Consulta general y chequeo)
+3️⃣ *💉 Procedimientos de Enfermería* (Sueros, sondas, curaciones, inyecciones)
+4️⃣ *🌟 Planes Médicos y Membresías Mensuales* (Desde 15$/mes)
+5️⃣ *✈️ Plan Salud Sin Fronteras* (Cuidado para padres desde el exterior 80$)
+6️⃣ *📋 Certificados Médicos Oficiales y Telemedicina*
+7️⃣ *💳 Zonas de Cobertura y Métodos de Pago* (Zelle, Pago Móvil, Efectivo)
+8️⃣ *👩‍⚕️ Hablar con un Médico Asesor de Guardia*
+
+_También puedes escribir tu síntoma o enviarnos una nota de voz._`,
+
+      '1': `🚨 *¡URGENCIA MÉDICA PRIORITARIA!* 🚨
+
+Aquí Lisa de MediHome. Nuestro equipo médico de guardia está listo para salir de inmediato a tu domicilio en Valencia.
+
+Por favor indícame rápidamente:
+1. *Nombre y edad del paciente:*
+2. *Síntoma o motivo de la urgencia:*
+3. *Dirección exacta (Urbanización, edificio/casa):*
+
+O si prefieres hablar ya mismo, llámanos directamente:
+📞 *0412-1233287* / *0414-4417118*`,
+
+      '2': `👨‍⚕️ *CONSULTA MÉDICA A DOMICILIO*
+
+Un médico general / cirujano de nuestro equipo acudirá a tu hogar equipado con instrumental de diagnóstico estéril.
+
+✅ Evaluación física y diagnóstico completo.
+✅ Plan terapéutico y récipes médicos oficiales.
+✅ Aplicación de primera dosis de tratamiento (si aplica).
+
+Por favor indícame: *Nombre*, *edad del paciente* y la *urbanización de Valencia* para coordinar el traslado médico.`,
+
+      '3': `💉 *PROCEDIMIENTOS Y CUIDADOS DE ENFERMERÍA EN CASA*
+
+Atención con técnica 100% aséptica y descartable:
+
+💧 *A. Sueroterapia e hidratación:* Vitaminas, oligoelementos y electrolitos.
+💉 *B. Inyecciones y vías:* Endovenosa (EV) o intramuscular (IM).
+🔄 *C. Sondas:* Cambio y colocación de sonda vesical (Foley) o nasogástrica.
+🩹 *D. Curaciones avanzadas:* Escaras, pie diabético, quemaduras y heridas.
+✂️ *E. Procedimientos menores:* Retiro de puntos y suturas menores.
+
+¿Cuál de estos procedimientos requiere el paciente y en qué zona se encuentra?`,
+
+      '4': `🌟 *PLANES MÉDICOS Y MEMBRESÍAS MEDIHOME VALENCIA*
+
+Protege la salud de tu familia todo el mes sin sorpresas ni traslados:
+
+📱 *1. Plan Conexión Médica — 15$/mes*
+• Telemedicina 24/7 ilimitada por videollamada y chat.
+
+🚨 *2. Plan Alivio Inmediato — 30$/mes*
+• Telemedicina 24/7 + Atención de Urgencia Médica a domicilio 24/7.
+
+🏡 *3. Plan Cuidado Hogar — 40$/mes*
+• Telemedicina 24/7 + Urgencia 24/7 + Evaluación Médica presencial en casa.
+
+🩺 *4. Plan Bienestar Integral — 60$/mes*
+• Telemedicina + Urgencia 24/7 + Evaluación en Casa + Laboratorios y Procedimientos de Enfermería incluidos.
+
+👶 *5. Plan Pequeños Protegidos (Pediátrico) — 50$/mes*
+• Telemedicina + Urgencia 24/7 + Consulta de Niño Sano + Constancia Médica Escolar.
+
+✈️ *6. Plan Salud Sin Fronteras — 80$/mes*
+• Cuidado de padres en Valencia (pagos desde el exterior): Telemedicina + Urgencia 24/7 + 2 Visitas programadas/mes + Laboratorios o Procedimientos + Reporte WhatsApp.
+
+👉 *Escribe el número de plan (ej: 'Plan 1', 'Plan 5' o 'Plan 6')* para afiliarte.`,
+
+      '5': `✈️ ➔ 🇻🇪 *PLAN SALUD SIN FRONTERAS (80$/mes)*
+
+¿Estás en el exterior y deseas que tus padres en Valencia reciban la mejor atención médica con total tranquilidad?
+
+🌟 *¿Qué incluye el plan?*
+• Telemedicina 24/7 ilimitada.
+• Cobertura de Urgencias Médicas a domicilio 24/7.
+• 2 visitas médicas domiciliarias programadas al mes (control de tensión y glucosa).
+• Laboratorios de rutina o procedimientos médicos incluidos.
+• 📸 Reporte fotográfico y evolución clínica detallada directo a tu WhatsApp.
+
+💳 Aceptamos Zelle, PayPal, Binance USDT y Banesco Panamá.
+¿En qué urbanización de Valencia viven tus familiares?`,
+
+      '6': `📋 *CERTIFICADOS MÉDICOS Y TELEMEDICINA*
+
+🚗 *Certificados Médicos Oficiales:*
+• Certificado de Salud Vial (Licencia de Conducir).
+• Certificados Escolares y de Pre-empleo.
+
+📱 *Telemedicina 24/7:*
+• Orientación médica remota, triaje y revisión de exámenes de laboratorio.
+
+Indícanos si requieres el certificado presencial en Valencia o una consulta virtual.`,
+
+      '7': `📍 *ZONAS DE COBERTURA Y MÉTODOS DE PAGO*
+
+🚗 *Zonas en Valencia, Carabobo:*
+• El Parral, Prebo (I y II), La Ceiba, El Bosque, La Viña, Guaparo.
+• El Trigal (Norte, Sur, Centro) y La Trigaleña.
+• Municipios San Diego y Naguanagua.
+
+💳 *Métodos de Pago Aceptados:*
+• 📱 Pago Móvil / Transferencia (Bs. a tasa BCV).
+• 💵 Efectivo en Dólares ($).
+• 🇺🇸 Zelle (Directo USA).
+• 🟡 Binance USDT.
+• 🌐 PayPal y Banesco Panamá.`,
+
+      '8': `👩‍⚕️ *CONECTANDO CON EL MÉDICO ASESOR DE GUARDIA*
+
+Te saluda Lisa. Ya estoy transfiriendo este chat a nuestro equipo de guardia (Dr. Víctor Cedeño / Asistente Médico Alejandra Ramones).
+
+Por favor escribe el nombre del paciente y tu síntoma principal.
+🚨 Si es una urgencia de gravedad, llámanos ya: *0412-1233287*.`,
+
+      plan_1: `📱 *PLAN CONEXIÓN MÉDICA — 15$/mes*
+
+El respaldo médico que tú y tu familia necesitan siempre a mano:
+✅ Telemedicina 24/7 ilimitada con médicos generales.
+✅ Orientación sobre síntomas, medicamentos y dosis.
+✅ Interpretación de laboratorios e imágenes por videollamada o chat.
+✅ Emisión de récipes médicos oficiales digitalizados con QR.
+
+¿Deseas activar este plan? Por favor indícanos el nombre del titular para coordinar la afiliación.`,
+
+      plan_2: `🚨 *PLAN ALIVIO INMEDIATO — 30$/mes*
+
+Tranquilidad total de día y de noche en Valencia:
+✅ Telemedicina 24/7 ilimitada.
+✅ Cobertura de Urgencias Médicas a domicilio 24/7 sin costo adicional de traslado.
+✅ Despacho prioritario de la unidad médica a tu hogar.
+
+¿Deseas activar el Plan Alivio Inmediato? Indícanos tu zona en Valencia y nombre del titular.`,
+
+      plan_3: `🏡 *PLAN CUIDADO HOGAR — 40$/mes*
+
+Atención médica presencial periódica y respaldo continuo:
+✅ Telemedicina 24/7 ilimitada.
+✅ Cobertura de Urgencias Médicas 24/7 a domicilio.
+✅ Evaluación Médica completa en casa programada cada mes.
+✅ Chequeo preventivo de tensión, glicemia y signos vitales.
+
+Ideal para adultos y familias. ¿En qué urbanización te encuentras para registrarte?`,
+
+      plan_4: `🩺 *PLAN BIENESTAR INTEGRAL — 60$/mes*
+
+La máxima cobertura clínica en la comodidad de tu hogar:
+✅ Telemedicina 24/7 + Urgencias Médicas 24/7.
+✅ Evaluación Médica periódica en casa.
+✅ Laboratorios de rutina incluidos.
+✅ Procedimientos de enfermería (sueroterapia, vías, inyecciones o curaciones).
+
+¿Deseas afiliarte a la cobertura completa de 60$? Escribe tus datos y te registramos.`,
+
+      plan_5: `👶 *PLAN PEQUEÑOS PROTEGIDOS (PEDIÁTRICO) — 50$/mes*
+
+Cuidado con amor y paciencia para tus hijos en casa:
+✅ Telemedicina 24/7 para dudas de fiebre, cólicos o cuadros virales.
+✅ Atención de Urgencia Médica a domicilio 24/7.
+✅ Consulta periódica de Niño Sano en la comodidad de tu hogar.
+✅ Constancia Médica Escolar y de aptitud física oficial.
+
+¿Cuántos niños deseas proteger y qué edades tienen?`,
+
+      plan_6: `✈️ *PLAN SALUD SIN FRONTERAS — 80$/mes*
+
+La tranquilidad de saber que tus padres en Valencia están en las mejores manos:
+✅ Telemedicina 24/7 ilimitada.
+✅ Cobertura de Urgencias Médicas a domicilio 24/7.
+✅ 2 Visitas Médicas Domiciliarias programadas al mes.
+✅ Laboratorios o procedimientos médicos incluidos (sueros, curaciones, sondas).
+✅ 📸 Reporte fotográfico y signos vitales enviado a tu WhatsApp tras cada visita.
+✅ Pagos desde el exterior: Zelle, PayPal, Binance USDT y Banesco Panamá.
+
+¿En qué zona de Valencia viven tus padres para coordinar su primera visita?`,
+
+      fallback_empathetic: `🩺 *Hola, te saluda Lisa de MEDIHOME Valencia.*
+
+He recibido tu mensaje y comprendo perfectamente tu necesidad. La salud y tranquilidad de tu familia es nuestra prioridad número uno.
+
+👨‍⚕️ *Ya le he notificado a nuestro médico de guardia en Valencia.* En unos minutos un miembro de nuestro equipo médico te atenderá directamente.
+
+Mientras tanto, si puedes decirme:
+1. *¿En qué urbanización de Valencia te encuentras?*
+2. *¿Nombre y edad del paciente?*
+
+🚨 *Si se trata de una urgencia inmediata*, no esperes un mensaje de texto, llámanos directamente ahora mismo:
+📞 *0412-1233287* o *0414-4417118*`
+    };
+
+    function addMessage(text, isUser = false) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `flex ${isUser ? 'justify-end' : 'justify-start'} animate-fade-in`;
+      
+      const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      
+      let formattedText = text
+        .replace(/\*(.*?)\*/g, '<strong>$1</strong>')
+        .replace(/_(.*?)_/g, '<em>$1</em>')
+        .replace(/\n/g, '<br>');
+
+      msgDiv.innerHTML = `
+        <div class="max-w-[85%] rounded-2xl px-3.5 py-2 text-xs shadow-md ${
+          isUser 
+            ? 'bg-[#005c4b] text-white rounded-tr-none' 
+            : 'bg-[#202c33] text-slate-100 rounded-tl-none border border-slate-700/50'
+        }">
+          <div>${formattedText}</div>
+          <div class="text-[10px] text-right mt-1 text-slate-400 flex items-center justify-end gap-1">
+            <span>${time}</span>
+            ${isUser ? '<span class="text-teal-300">✓✓</span>' : ''}
+          </div>
+        </div>
+      `;
+      container.appendChild(msgDiv);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function showTypingAndReply(replyText) {
+      botStatus.innerText = "Lisa está escribiendo...";
+      botStatus.className = "text-[11px] text-teal-300 italic font-medium";
+
+      setTimeout(() => {
+        botStatus.innerText = "en línea";
+        botStatus.className = "text-[11px] text-emerald-400 font-medium";
+        addMessage(replyText, false);
+      }, 700);
+    }
+
+    function processUserInput(text) {
+      const clean = text.trim().toLowerCase();
+      
+      if (clean === '1' || clean === '0' || clean.includes('emergencia') || clean.includes('urgente') || clean.includes('grave') || clean.includes('desmay') || clean.includes('pecho') || clean.includes('ahogo') || clean.includes('convuls')) {
+        showTypingAndReply(BOT_RESPONSES['1']);
+      } else if (clean === '2' || clean.includes('medico a domicilio') || clean.includes('doctor a domicilio') || clean.includes('consulta general') || clean.includes('visita medica')) {
+        showTypingAndReply(BOT_RESPONSES['2']);
+      } else if (clean === '3' || clean.includes('enfermer') || clean.includes('suero') || clean.includes('inyecc') || clean.includes('sonda') || clean.includes('curaci') || clean.includes('escara') || clean.includes('puntos')) {
+        showTypingAndReply(BOT_RESPONSES['3']);
+      } else if (clean.includes('plan 1') || clean.includes('conexion') || clean.includes('15$')) {
+        showTypingAndReply(BOT_RESPONSES.plan_1);
+      } else if (clean.includes('plan 2') || clean.includes('alivio') || clean.includes('30$')) {
+        showTypingAndReply(BOT_RESPONSES.plan_2);
+      } else if (clean.includes('plan 3') || clean.includes('cuidado hogar') || clean.includes('40$')) {
+        showTypingAndReply(BOT_RESPONSES.plan_3);
+      } else if (clean.includes('plan 4') || clean.includes('bienestar integral') || clean.includes('60$')) {
+        showTypingAndReply(BOT_RESPONSES.plan_4);
+      } else if (clean.includes('plan 5') || clean.includes('pediat') || clean.includes('pequeños') || clean.includes('nino') || clean.includes('50$')) {
+        showTypingAndReply(BOT_RESPONSES.plan_5);
+      } else if (clean.includes('plan 6') || clean.includes('salud sin fronteras') || clean.includes('sin fronteras') || clean.includes('exterior') || clean.includes('padres') || clean.includes('80$')) {
+        showTypingAndReply(BOT_RESPONSES.plan_6);
+      } else if (clean === '4' || clean.includes('plan') || clean.includes('planes') || clean.includes('precio') || clean.includes('cuanto') || clean.includes('tarifa') || clean.includes('membresia')) {
+        showTypingAndReply(BOT_RESPONSES['4']);
+      } else if (clean === '5') {
+        showTypingAndReply(BOT_RESPONSES['5']);
+      } else if (clean === '6' || clean.includes('certificado') || clean.includes('conducir') || clean.includes('telemedicina')) {
+        showTypingAndReply(BOT_RESPONSES['6']);
+      } else if (clean === '7' || clean.includes('pago') || clean.includes('zona') || clean.includes('cobertura') || clean.includes('zelle')) {
+        showTypingAndReply(BOT_RESPONSES['7']);
+      } else if (clean === '8' || clean.includes('asesor') || clean.includes('humano') || clean.includes('persona')) {
+        showTypingAndReply(BOT_RESPONSES['8']);
+      } else if (clean.includes('hola') || clean.includes('buenas') || clean.includes('buenos dias') || clean.includes('menu') || clean.includes('lisa')) {
+        showTypingAndReply(BOT_RESPONSES.menu);
+      } else {
+        showTypingAndReply(BOT_RESPONSES.fallback_empathetic);
+      }
+    }
+
+    function sendMessage() {
+      const text = input.value.trim();
+      if (!text) return;
+      addMessage(text, true);
+      input.value = '';
+      setTimeout(() => processUserInput(text), 300);
+    }
+
+    function handleQuickResponse(optionKey) {
+      addMessage(optionKey, true);
+      setTimeout(() => processUserInput(optionKey), 300);
+    }
+
+    function resetChat() {
+      container.innerHTML = '';
+      setTimeout(() => {
+        addMessage(BOT_RESPONSES.menu, false);
+      }, 400);
+    }
+
+    window.onload = () => {
+      resetChat();
+    };
+  </script>
+</body>
+</html>

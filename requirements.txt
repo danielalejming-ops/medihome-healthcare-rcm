@@ -1,0 +1,2 @@
+# MEDIHOME WhatsApp Bot Server
+# El script corre con la librería estándar de Python sin dependencias obligatorias.

@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dossier Comercial • Soluciones Digitales & Automatización con IA</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-dark: #0a0f1d;
+      --bg-card: rgba(18, 26, 47, 0.75);
+      --bg-card-hover: rgba(26, 38, 68, 0.9);
+      --border-glow: rgba(0, 209, 157, 0.3);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --primary: #00d19d;
+      --primary-glow: rgba(0, 209, 157, 0.4);
+      --secondary: #3b82f6;
+      --accent: #8b5cf6;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --card-radius: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 209, 157, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 70%, rgba(59, 130, 246, 0.09) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 60%);
+      background-attachment: fixed;
+    }
+
+    /* TOP BAR NAVEGACIÓN Y CONTROLES */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 15, 29, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #041017;
+      font-size: 1.1rem;
+      font-weight: 800;
+      box-shadow: 0 0 20px var(--primary-glow);
+    }
+
+    .brand-name {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #fff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-badge {
+      background: rgba(0, 209, 157, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(0, 209, 157, 0.3);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-action {
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #00b386);
+      color: #03151b;
+      border: none;
+      box-shadow: 0 4px 15px var(--primary-glow);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 209, 157, 0.6);
+    }
+
+    /* SLIDE CONTROLS */
+    .slide-dots {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      width: 28px;
+      border-radius: 6px;
+      background: var(--primary);
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    /* CONTENEDOR PRINCIPAL DE DIAPOSITIVAS */
+    .presentation-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .slide {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ELEMENTOS COMUNES */
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 209, 157, 0.12);
+      border: 1px solid rgba(0, 209, 157, 0.3);
+      padding: 6px 14px;
+      border-radius: 30px;
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .slide-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .slide-title .gradient-text {
+      background: linear-gradient(135deg, #00d19d 20%, #3b82f6 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .slide-subtitle {
+      font-size: 1.18rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 820px;
+      margin-bottom: 36px;
+    }
+
+    /* HERO SLIDE 1 */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .hero-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .hero-stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 18px 16px;
+      text-align: left;
+    }
+
+    .hero-stat-number {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+      margin-bottom: 4px;
+    }
+
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* CARD GLASSMORPHISM */
+    .card-glass {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--card-radius);
+      padding: 32px;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-glass:hover {
+      border-color: rgba(0, 209, 157, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* SLIDE 2: EL PROBLEMA */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .problem-card {
+      background: rgba(239, 68, 68, 0.04);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      border-radius: 18px;
+      padding: 26px;
+    }
+
+    .problem-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+
+    .problem-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fca5a5;
+      margin-bottom: 10px;
+    }
+
+    .problem-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* SLIDE 3: CATÁLOGO DE PRODUCTOS */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+      margin-top: 20px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 28px;
+      position: relative;
+    }
+
+    .service-card-header {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .service-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(0, 209, 157, 0.2), rgba(59, 130, 246, 0.2));
+      border: 1px solid rgba(0, 209, 157, 0.3);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .service-tag {
+      font-size: 0.75rem;
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .service-features {
+      list-style: none;
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .service-features li i {
+      color: var(--primary);
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    /* SLIDE 4: SIMULADOR WHATSAPP EN VIVO */
+    .simulator-container {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .phone-mockup {
+      background: #111b21;
+      border: 8px solid #202c33;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 209, 157, 0.15);
+      position: relative;
+    }
+
+    .phone-header {
+      background: #202c33;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .phone-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00d19d, #3b82f6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #041017;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .phone-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #e9edef;
+    }
+
+    .phone-info p {
+      font-size: 0.72rem;
+      color: #00d19d;
+    }
+
+    .phone-chat {
+      padding: 18px 14px;
+      min-height: 380px;
+      background: #0b141a;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .chat-bubble {
+      max-width: 86%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      position: relative;
+    }
+
+    .chat-incoming {
+      background: #202c33;
+      color: #e9edef;
+      align-self: flex-start;
+      border-bottom-left-radius: 2px;
+    }
+
+    .chat-outgoing {
+      background: #005c4b;
+      color: #e9edef;
+      align-self: flex-end;
+      border-bottom-right-radius: 2px;
+    }
+
+    .audio-player-mockup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 0;
+    }
+
+    .audio-play-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00d19d;
+      font-size: 0.8rem;
+    }
+
+    .waveform {
+      flex: 1;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .waveform-bar {
+      width: 3px;
+      background: #00d19d;
+      border-radius: 2px;
+      animation: wave 1.2s ease-in-out infinite alternate;
+    }
+
+    @keyframes wave {
+      0% { height: 4px; }
+      100% { height: 16px; }
+    }
+
+    .sim-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sim-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      color: var(--text-main);
+    }
+
+    .sim-btn:hover, .sim-btn.active {
+      border-color: var(--primary);
+      background: rgba(0, 209, 157, 0.08);
+      transform: translateX(6px);
+    }
+
+    .sim-btn h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sim-btn p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* SLIDE 5: CASO MEDIHOME EN VIVO */
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .browser-mockup {
+      background: #1e293b;
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .browser-bar {
+      background: #0f172a;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .b-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .b-red { background: #ef4444; }
+    .b-yellow { background: #f59e0b; }
+    .b-green { background: #10b981; }
+
+    .browser-url {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .browser-content {
+      padding: 24px;
+      background: #0f172a;
+    }
+
+    /* SLIDE 6: NICHOS */
+    .nichos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .nicho-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .nicho-card:hover {
+      border-color: var(--secondary);
+      transform: translateY(-4px);
+    }
+
+    .nicho-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin: 0 auto 16px;
+    }
+
+    .nicho-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .nicho-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* SLIDE 7: PRECIOS Y PAQUETES */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 20px;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--primary);
+      background: rgba(18, 26, 47, 0.95);
+      box-shadow: 0 10px 40px rgba(0, 209, 157, 0.2);
+      transform: scale(1.03);
+    }
+
+    .pricing-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: #03151b;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pricing-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .pricing-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      min-height: 40px;
+    }
+
+    .pricing-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      margin-bottom: 6px;
+    }
+
+    .pricing-term {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex: 1;
+    }
+
+    .pricing-features li {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .pricing-features li i {
+      color: var(--primary);
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    /* SLIDE 8: CIERRE Y CONTACTO */
+    .cta-card {
+      background: linear-gradient(135deg, rgba(0, 209, 157, 0.15), rgba(59, 130, 246, 0.15));
+      border: 1px solid var(--border-glow);
+      border-radius: 28px;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER DE NAVEGACIÓN ENTRE DIAPOSITIVAS */
+    .presentation-nav {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(18, 26, 47, 0.9);
+      border: 1px solid var(--border-subtle);
+      border-radius: 40px;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      backdrop-filter: blur(16px);
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-arrow {
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      font-size: 1.1rem;
+      cursor: pointer;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .nav-arrow:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--primary);
+    }
+
+    .slide-counter {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid, .simulator-container, .case-grid, .services-grid, .pricing-grid, .problem-grid, .nichos-grid {
+        grid-template-columns: 1fr;
+      }
+      .slide-title { font-size: 2.1rem; }
+      .pricing-card.featured { transform: none; }
+      .topbar { padding: 12px 16px; }
+      .presentation-container { padding: 20px 16px 100px; }
+    }
+
+    /* IMPRESIÓN / EXPORTACIÓN A PDF */
+    @media print {
+      body { background: #0a0f1d !important; color: #fff !important; }
+      .topbar, .presentation-nav, .sim-controls { display: none !important; }
+      .slide { display: block !important; page-break-after: always; padding: 40px 0; }
+      .presentation-container { max-width: 100%; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <a href="#" class="brand">
+      <div class="brand-logo"><i class="fa-solid fa-brain"></i></div>
+      <div class="brand-name">Nexus<span style="color:var(--primary);">AI</span> Lab</div>
+      <span class="brand-badge">Soluciones 2026</span>
+    </a>
+
+    <!-- Dots de diapositivas -->
+    <div class="slide-dots" id="dotsContainer">
+      <!-- Generados por JS -->
+    </div>
+
+    <div class="top-actions">
+      <button class="btn-action btn-outline" onclick="window.print()" title="Imprimir o Guardar como PDF">
+        <i class="fa-solid fa-file-pdf"></i> Exportar PDF
+      </button>
+      <a href="https://wa.me/584245690079?text=Hola,%20vi%20la%20presentación%20de%20servicios%20y%20deseo%20agendar%20una%20demostración%20para%20mi%20negocio" target="_blank" class="btn-action btn-primary">
+        <i class="fa-brands fa-whatsapp"></i> Contactar
+      </a>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR DE LA PRESENTACIÓN -->
+  <main class="presentation-container">
+
+    <!-- DIAPOSITIVA 1: PORTADA EJECUTIVA -->
+    <section class="slide active" id="slide-1">
+      <div class="hero-grid">
+        <div>
+          <span class="badge-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> Innovación Comercial con IA</span>
+          <h1 class="slide-title">
+            Transforma tu Negocio con <span class="gradient-text">Webs de Alta Conversión</span> & Agentes de IA 24/7
+          </h1>
+          <p class="slide-subtitle">
+            El 60% de los clientes potenciales en WhatsApp se pierden por demoras en la respuesta. Diseñamos la infraestructura digital que atiende, escucha notas de voz y cierra ventas mientras tú descansas.
+          </p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn-action btn-primary" onclick="goToSlide(2)">
+              Ver Catálogo Completo <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <button class="btn-action btn-outline" onclick="goToSlide(4)">
+              <i class="fa-solid fa-play"></i> Probar Simulador en Vivo
+            </button>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="hero-stat-card">
+              <div class="hero-stat-number">&lt; 3s</div>
+              <div class="hero-stat-label">Tiempo promedio de respuesta a clientes</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hero-stat-number">100%</div>
+              <div class="hero-stat-label">Audios transcritos y atendidos con IA</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hero-stat-number">24/7</div>
+              <div class="hero-stat-label">Disponibilidad sin costo de personal extra</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card-glass" style="text-align: center;">
+            <div style="width: 70px; height: 70px; border-radius: 20px; background: rgba(0, 209, 157, 0.15); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 20px;">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 12px; font-weight: 800;">Ecosistema Digital Unificado</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+              Combinamos arquitectura web moderna ultra veloz con inteligencia artificial multimodal para que tu marca se posicione como líder en su sector.
+            </p>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 14px; text-align: left; font-size: 0.82rem; color: var(--text-muted);">
+              <div style="display:flex; justify-content:space-between; margin-bottom: 6px;">
+                <span><i class="fa-solid fa-circle-check" style="color:var(--primary);"></i> Caso MediHome Valencia</span>
+                <strong style="color:#10b981;">EN PRODUCCIÓN</strong>
+              </div>
+              <div>Web en vivo + Agente Lisa v5.4 atendiendo urgencias y triajes clínicos en tiempo real.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAPOSITIVA 2: EL PROBLEMA REAL DEL MERCADO -->
+    <section class="slide" id="slide-2">
+      <span class="badge-pill" style="background:rgba(239, 68, 68, 0.12); color:#f87171; border-color:rgba(239, 68, 68, 0.3);">
+        <i class="fa-solid fa-triangle-exclamation"></i> Diagnóstico del Mercado
+      </span>
+      <h2 class="slide-title">Por qué la Mayoría de Negocios <span style="color:#f87171;">Pierde Dinero</span> a Diario</h2>
+      <p class="slide-subtitle">
+        Invertir en publicidad o tener un buen producto no sirve de nada si el canal de ventas colapsa por falta de inmediatez.
+      </p>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon"><i class="fa-solid fa-stopwatch"></i></div>
+          <h3 class="problem-title">Tiempos de Respuesta Tardíos</h3>
+          <p class="problem-desc">
+            El 78% de los prospectos le compra al primer proveedor que le responde. Si tardas 30 minutos o 2 horas en contestar por estar ocupado, el cliente ya le escribió a tu competencia.
+          </p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon"><i class="fa-solid fa-microphone-slash"></i></div>
+          <h3 class="problem-title">Notas de Voz Acumuladas</h3>
+          <p class="problem-desc">
+            En Latinoamérica, más del 50% de las consultas llegan como notas de voz. Escuchar audios largos de 2 minutos quita tiempo productivo y retrasa la atención de urgencias comerciales.
+          </p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon"><i class="fa-solid fa-globe-pointer"></i></div>
+          <h3 class="problem-title">Sitios Web "Fantasmas"</h3>
+          <p class="problem-desc">
+            Páginas web tradicionales pesadas, lentas y desactualizadas que no tienen embudos hacia WhatsApp ni convierten a las personas que visitan tu perfil de Instagram o Google.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAPOSITIVA 3: NUESTRO CATÁLOGO DE SOLUCIONES -->
+    <section class="slide" id="slide-3">
+      <span class="badge-pill"><i class="fa-solid fa-layer-group"></i> Servicios & Especialidades</span>
+      <h2 class="slide-title">Nuestra Suite de <span class="gradient-text">Soluciones Digitales</span></h2>
+      <p class="slide-subtitle">
+        Desarrollamos soluciones personalizadas llave en mano adaptadas a la identidad y necesidades de tu negocio.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-header">
+            <div class="service-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+            <div>
+              <span class="service-tag">Solución Web</span>
+              <h3 class="service-title">Landing Pages Comerciales de Alta Conversión</h3>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+            Diseño web vanguardista, responsivo para teléfonos y computadoras, con carga ultra rápida (&lt; 1 segundo) y botones directos a WhatsApp.
+          </p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> Catálogo interactivo de servicios y calculadora de presupuestos en vivo.</li>
+            <li><i class="fa-solid fa-check"></i> Optimización para SEO local y perfil de Google Mi Negocio.</li>
+            <li><i class="fa-solid fa-check"></i> Hospedaje en CDN mundial de máxima velocidad (sin costos mensuales de hosting).</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-header">
+            <div class="service-icon-box"><i class="fa-solid fa-robot"></i></div>
+            <div>
+              <span class="service-tag">Inteligencia Artificial</span>
+              <h3 class="service-title">Agente de IA Multimodal 24/7 para WhatsApp</h3>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+            Un asistente virtual impulsado por Google Gemini que atiende texto y notas de voz con calidez humana venezolana y cero lenguaje robótico.
+          </p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> <strong>Escucha audios:</strong> Transcribe y entiende notas de voz del cliente en tiempo real.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Entrenamiento a medida:</strong> Conoce tus precios, servicios, ubicaciones y políticas.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Triaje automático:</strong> Califica el síntoma o necesidad antes de transferir al humano.</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-header">
+            <div class="service-icon-box"><i class="fa-solid fa-funnel-dollar"></i></div>
+            <div>
+              <span class="service-tag">Automatización Comercial</span>
+              <h3 class="service-title">Embudos de Calificación & Cierre de Ventas</h3>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+            Filtra a los curiosos y reúne los datos clave del cliente (nombre, ubicación, servicio requerido, forma de pago) de forma natural y sin fricciones.
+          </p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> Detección automática de intención de pago (Zelle, Pago Móvil BCV, Efectivo, Binance).</li>
+            <li><i class="fa-solid fa-check"></i> Alertas prioritarias inmediatas para urgencias o clientes VIP.</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-header">
+            <div class="service-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <span class="service-tag">Seguridad & Rendimiento</span>
+              <h3 class="service-title">Arquitectura Privada y Blindaje Anti-Cruce</h3>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+            Tecnología desarrollada para no mezclar conversaciones entre clientes ni enviar mensajes equivocados.
+          </p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> Protección total de credenciales y base de datos de tus clientes.</li>
+            <li><i class="fa-solid fa-check"></i> Control total con botón de pausa o activación 24/7 con un solo clic.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAPOSITIVA 4: SIMULADOR INTERACTIVO EN VIVO -->
+    <section class="slide" id="slide-4">
+      <span class="badge-pill"><i class="fa-solid fa-play"></i> Demostración Interactiva</span>
+      <h2 class="slide-title">Observa la IA en <span class="gradient-text">Acción en Tiempo Real</span></h2>
+      <p class="slide-subtitle">
+        Haz clic en cualquiera de los escenarios para ver cómo el Asistente de IA interpreta audios y textos instantáneamente.
+      </p>
+
+      <div class="simulator-container">
+        <!-- Controles interactivos -->
+        <div class="sim-controls">
+          <button class="sim-btn active" onclick="simulateChat('audio')">
+            <h5><i class="fa-solid fa-microphone" style="color:var(--primary);"></i> Escenario 1: Paciente envía Nota de Voz</h5>
+            <p>El cliente envía un audio de 15 segundos preguntando por médico en su casa.</p>
+          </button>
+
+          <button class="sim-btn" onclick="simulateChat('planes')">
+            <h5><i class="fa-solid fa-heart-pulse" style="color:var(--secondary);"></i> Escenario 2: Pregunta por Planes para Padres</h5>
+            <p>Preguntan por cobertura para familiares de la tercera edad desde el exterior.</p>
+          </button>
+
+          <button class="sim-btn" onclick="simulateChat('urgencia')">
+            <h5><i class="fa-solid fa-truck-medical" style="color:#ef4444;"></i> Escenario 3: Urgencia Médica Prioritaria</h5>
+            <p>Síntoma agudo que requiere triaje de emergencia y número de guardia inmediato.</p>
+          </button>
+        </div>
+
+        <!-- Mockup Teléfono -->
+        <div class="phone-mockup">
+          <div class="phone-header">
+            <div class="phone-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+            <div class="phone-info">
+              <h4>Lisa • Asistente MediHome</h4>
+              <p><i class="fa-solid fa-circle" style="font-size:7px;"></i> En línea 24/7 • Responde en 2s</p>
+            </div>
+          </div>
+
+          <div class="phone-chat" id="chatWindow">
+            <!-- Mensaje 1 (Paciente) -->
+            <div class="chat-bubble chat-incoming">
+              <div class="audio-player-mockup">
+                <div class="audio-play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="waveform">
+                  <div class="waveform-bar" style="animation-delay: 0.1s;"></div>
+                  <div class="waveform-bar" style="animation-delay: 0.3s;"></div>
+                  <div class="waveform-bar" style="animation-delay: 0.5s;"></div>
+                  <div class="waveform-bar" style="animation-delay: 0.2s;"></div>
+                  <div class="waveform-bar" style="animation-delay: 0.6s;"></div>
+                  <div class="waveform-bar" style="animation-delay: 0.4s;"></div>
+                </div>
+                <span style="font-size: 0.72rem; color: #8696a0;">0:14</span>
+              </div>
+              <div style="font-size: 0.75rem; color: #8696a0; margin-top: 4px; font-style: italic;">
+                "Hola buenas tardes, mi mamá tiene fiebre alta y dolor abdominal en Prebo, ¿pueden mandar un médico a domicilio?"
+              </div>
+            </div>
+
+            <!-- Mensaje 2 (Respuesta IA) -->
+            <div class="chat-bubble chat-outgoing">
+              ¡Hola! Te saluda Lisa de *MediHome Valencia* 🩺✨. Con muchísimo gusto activamos nuestro servicio de consulta médica a domicilio en Prebo para atender a tu mami 🏡🚗💨.<br><br>
+              Nuestro equipo de guardia está listo para visitarla. ¿Podrías confirmarnos por favor su **nombre y edad** para coordinar la salida inmediata del médico?
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAPOSITIVA 5: CASO DE ÉXITO REAL (MEDIHOME) -->
+    <section class="slide" id="slide-5">
+      <span class="badge-pill"><i class="fa-solid fa-award"></i> Caso de Éxito en Producción</span>
+      <h2 class="slide-title">Caso de Estudio: <span class="gradient-text">MediHome Valencia</span></h2>
+      <p class="slide-subtitle">
+        Implementamos el ecosistema completo para una empresa de atención médica domiciliaria y urgencias 24/7 en Venezuela.
+      </p>
+
+      <div class="case-grid">
+        <div class="browser-mockup">
+          <div class="browser-bar">
+            <div class="browser-dots">
+              <div class="b-dot b-red"></div>
+              <div class="b-dot b-yellow"></div>
+              <div class="b-dot b-green"></div>
+            </div>
+            <div class="browser-url">
+              <i class="fa-solid fa-lock" style="color:var(--primary); font-size:10px;"></i>
+              https://medihomevzla.netlify.app/
+            </div>
+          </div>
+          <div class="browser-content" style="text-align: center; padding: 30px 20px;">
+            <div style="width:60px; height:60px; border-radius:14px; background:linear-gradient(135deg,#00d19d,#3b82f6); display:flex; align-items:center; justify-content:center; color:#03151b; font-size:1.8rem; margin:0 auto 16px;">
+              <i class="fa-solid fa-house-medical"></i>
+            </div>
+            <h4 style="font-size:1.25rem; font-weight:800; margin-bottom:8px;">MediHome Valencia</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">
+              Landing Page con 12 servicios médicos especializados, cotizador dinámico y embudo directo a WhatsApp.
+            </p>
+            <a href="https://medihomevzla.netlify.app/" target="_blank" class="btn-action btn-primary" style="font-size:0.82rem;">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir Sitio Web en Vivo
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:16px;">Resultados Obtenidos:</h3>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div class="card-glass" style="padding:18px 20px;">
+              <div style="font-size:1.1rem; font-weight:700; color:var(--primary); margin-bottom:4px;">
+                <i class="fa-solid fa-bolt"></i> Atención Inmediata a Pacientes 24/7
+              </div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                El asistente virtual responde dudas clínicas y triajes en menos de 3 segundos, guiando al familiar hacia la contratación del servicio.
+              </p>
+            </div>
+
+            <div class="card-glass" style="padding:18px 20px;">
+              <div style="font-size:1.1rem; font-weight:700; color:var(--secondary); margin-bottom:4px;">
+                <i class="fa-solid fa-headphones"></i> Comprensión Total de Audios
+              </div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                Los pacientes en situaciones de estrés envían notas de voz angustiadas; la IA extrae los síntomas principales y la dirección sin hacer esperar al usuario.
+              </p>
+            </div>
+
+            <div class="card-glass" style="padding:18px 20px;">
+              <div style="font-size:1.1rem; font-weight:700; color:var(--accent); margin-bottom:4px;">
+                <i class="fa-solid fa-chart-line"></i> Aumento Drástico en Conversión
+              </div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                La combinación de una landing page clara y una respuesta instantánea por WhatsApp evita el abandono de pacientes hacia otras clínicas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAPOSITIVA 6: NICHOS DE NEGOCIO IDEALES -->
+    <section class="slide" id="slide-6">
+      <span class="badge-pill"><i class="fa-solid fa-bullseye"></i> Sectores con Mayor Retorno</span>
+      <h2 class="slide-title">¿Para Quién es <span class="gradient-text">Esta Solución</span>?</h2>
+      <p class="slide-subtitle">
+        Cualquier negocio donde el cliente haga preguntas repetitivas o envíe notas de voz antes de comprar se beneficia enormemente desde el día 1.
+      </p>
+
+      <div class="nichos-grid">
+        <div class="nicho-card">
+          <div class="nicho-icon"><i class="fa-solid fa-tooth"></i></div>
+          <h3 class="nicho-title">Clínicas & Odontología</h3>
+          <p class="nicho-desc">
+            Consultorios dentales, cirujanos estéticos, laboratorios y veterinarias que reciben decenas de preguntas sobre precios y citas mientras están operando.
+          </p>
+        </div>
+
+        <div class="nicho-card">
+          <div class="nicho-icon"><i class="fa-solid fa-building"></i></div>
+          <h3 class="nicho-title">Inmobiliarias & Alquileres</h3>
+          <p class="nicho-desc">
+            Agentes que pierden horas enviando fotos de apartamentos, precios y zonas. La IA califica al cliente y agenda visitas a la propiedad.
+          </p>
+        </div>
+
+        <div class="nicho-card">
+          <div class="nicho-icon"><i class="fa-solid fa-car"></i></div>
+          <h3 class="nicho-title">Talleres & Repuestos</h3>
+          <p class="nicho-desc">
+            Clientes que envían fotos de piezas rotas o audios con el modelo del carro; la IA solicita año, marca y repuesto exacto automáticamente.
+          </p>
+        </div>
+
+        <div class="nicho-card">
+          <div class="nicho-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3 class="nicho-title">Bufetes & Asesorías</h3>
+          <p class="nicho-desc">
+            Abogados y contadores que necesitan recopilar la situación del cliente antes de agendar una videollamada o consulta de pago.
+          </p>
+        </div>
+
+        <div class="nicho-card">
+          <div class="nicho-icon"><i class="fa-solid fa-utensils"></i></div>
+          <h3 class="nicho-title">Eventos & Catering</h3>
+          <p class="nicho-desc">
+            Restaurantes y empresas de banquetes que requieren cotizar según número de personas, fechas y menús especiales sin demoras.
+          </p>
+        </div>
+
+        <div class="nicho-card">
+          <div class="nicho-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3 class="nicho-title">Academias & Cursos</h3>
+          <p class="nicho-desc">
+            Institutos de idiomas, cursos online o entrenadores personales donde se responden preguntas frecuentes sobre horarios, pensum y costos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAPOSITIVA 7: PLANES DE INVERSIÓN Y PAQUETES -->
+    <section class="slide" id="slide-7">
+      <span class="badge-pill"><i class="fa-solid fa-tags"></i> Opciones de Inversión</span>
+      <h2 class="slide-title">Planes Transparentes con <span class="gradient-text">Alto Retorno</span></h2>
+      <p class="slide-subtitle">
+        Con solo 1 o 2 clientes adicionales que rescates al mes gracias a la atención inmediata, esta inversión se paga sola.
+      </p>
+
+      <div class="pricing-grid">
+        <!-- PLAN 1 -->
+        <div class="pricing-card">
+          <h3 class="pricing-title">Landing Page Pro</h3>
+          <p class="pricing-desc">Ideal para negocios que necesitan presencia web moderna y embudos directos a WhatsApp.</p>
+          <div class="pricing-price">$290</div>
+          <div class="pricing-term">Pago único de implementación</div>
+          <ul class="pricing-features">
+            <li><i class="fa-solid fa-check"></i> Diseño web responsivo personalizado</li>
+            <li><i class="fa-solid fa-check"></i> Carga ultra rápida (&lt; 1 segundo)</li>
+            <li><i class="fa-solid fa-check"></i> Catálogo interactivo de servicios</li>
+            <li><i class="fa-solid fa-check"></i> Botones y enlaces directos a WhatsApp</li>
+            <li><i class="fa-solid fa-check"></i> Despliegue en red mundial segura</li>
+          </ul>
+          <a href="https://wa.me/584245690079?text=Hola,%20me%20interesa%20el%20Plan%20Landing%20Page%20Pro" target="_blank" class="btn-action btn-outline" style="justify-content:center;">
+            Solicitar Plan
+          </a>
+        </div>
+
+        <!-- PLAN 2 (DESTACADO) -->
+        <div class="pricing-card featured">
+          <span class="pricing-tag">⭐ Más Solicitado</span>
+          <h3 class="pricing-title">Ecosistema Completo</h3>
+          <p class="pricing-desc">Página Web de Alta Conversión + Agente de Inteligencia Artificial 24/7 en WhatsApp.</p>
+          <div class="pricing-price" style="color:var(--primary);">$590</div>
+          <div class="pricing-term">Implementación completa llave en mano</div>
+          <ul class="pricing-features">
+            <li><i class="fa-solid fa-check"></i> <strong>Todo lo incluido en Landing Page Pro</strong></li>
+            <li><i class="fa-solid fa-check"></i> <strong>Agente de IA Multimodal en WhatsApp</strong></li>
+            <li><i class="fa-solid fa-check"></i> <strong>Escucha y responde notas de voz</strong></li>
+            <li><i class="fa-solid fa-check"></i> Entrenamiento con catálogo y políticas</li>
+            <li><i class="fa-solid fa-check"></i> Triaje y calificación de clientes 24/7</li>
+            <li><i class="fa-solid fa-check"></i> 30 días de garantía y soporte incluidos</li>
+          </ul>
+          <a href="https://wa.me/584245690079?text=Hola,%20me%20interesa%20el%20Ecosistema%20Completo%20(Web%20+%20IA%20WhatsApp)" target="_blank" class="btn-action btn-primary" style="justify-content:center;">
+            Elegir Ecosistema Completo
+          </a>
+        </div>
+
+        <!-- PLAN 3 -->
+        <div class="pricing-card">
+          <h3 class="pricing-title">Agente IA WhatsApp</h3>
+          <p class="pricing-desc">Para empresas que ya tienen página web pero desean automatizar su canal de WhatsApp.</p>
+          <div class="pricing-price">$380</div>
+          <div class="pricing-term">Pago único de configuración e IA</div>
+          <ul class="pricing-features">
+            <li><i class="fa-solid fa-check"></i> Agente de IA entrenado para tu marca</li>
+            <li><i class="fa-solid fa-check"></i> Transcripción e interpretación de audios</li>
+            <li><i class="fa-solid fa-check"></i> Respuestas humanas con calidez y emojis</li>
+            <li><i class="fa-solid fa-check"></i> Filtrado y calificación de prospectos</li>
+            <li><i class="fa-solid fa-check"></i> 15 días de acompañamiento técnico</li>
+          </ul>
+          <a href="https://wa.me/584245690079?text=Hola,%20me%20interesa%20el%20Agente%20de%20IA%20para%20WhatsApp" target="_blank" class="btn-action btn-outline" style="justify-content:center;">
+            Solicitar Agente IA
+          </a>
+        </div>
+      </div>
+
+      <div style="margin-top:24px; text-align:center; font-size:0.85rem; color:var(--text-dim);">
+        * Planes de mantenimiento mensual opcionales disponibles desde <strong>$50/mes</strong> (actualizaciones de catálogo, monitoreo de servidor y soporte prioritario).
+      </div>
+    </section>
+
+    <!-- DIAPOSITIVA 8: LLAMADO A LA ACCIÓN & CONTACTO -->
+    <section class="slide" id="slide-8">
+      <div class="cta-card">
+        <span class="badge-pill"><i class="fa-solid fa-rocket"></i> Da el Siguiente Paso</span>
+        <h2 style="font-size: 2.5rem; font-weight:800; margin-bottom: 16px; color:#fff;">
+          ¿Listo para Automatizar y Multiplicar las Ventas de tu Empresa?
+        </h2>
+        <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 650px; margin: 0 auto 30px; line-height: 1.6;">
+          Agendemos una demostración interactiva gratuita de 15 minutos donde te mostraremos en vivo cómo la Inteligencia Artificial responderá a los clientes de tu negocio.
+        </p>
+
+        <div class="cta-buttons">
+          <a href="https://wa.me/584245690079?text=Hola,%20quiero%20agendar%20una%20demostración%20gratuita%20de%20Web%20e%20IA%20para%20mi%20negocio" target="_blank" class="btn-action btn-primary" style="font-size: 1.05rem; padding: 14px 28px;">
+            <i class="fa-brands fa-whatsapp" style="font-size:1.3rem;"></i> Agendar Demostración por WhatsApp
+          </a>
+          <a href="https://medihomevzla.netlify.app/" target="_blank" class="btn-action btn-outline" style="font-size: 1.05rem; padding: 14px 28px;">
+            <i class="fa-solid fa-globe"></i> Explorar Caso MediHome
+          </a>
+        </div>
+
+        <div style="margin-top: 36px; display: flex; justify-content: center; gap: 28px; color: var(--text-muted); font-size: 0.88rem; flex-wrap: wrap;">
+          <span><i class="fa-solid fa-check" style="color:var(--primary);"></i> Sin compromiso</span>
+          <span><i class="fa-solid fa-check" style="color:var(--primary);"></i> Demostración con datos de tu nicho</span>
+          <span><i class="fa-solid fa-check" style="color:var(--primary);"></i> Implementación en tiempo récord</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BARRA DE NAVEGACIÓN FLOTANTE -->
+  <nav class="presentation-nav">
+    <button class="nav-arrow" onclick="prevSlide()" title="Diapositiva anterior">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <div class="slide-counter" id="slideCounter">1 / 8</div>
+    <button class="nav-arrow" onclick="nextSlide()" title="Diapositiva siguiente">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </nav>
+
+  <!-- JAVASCRIPT DE LA PRESENTACIÓN -->
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 8;
+
+    // Inicializar Dots en la barra superior
+    const dotsContainer = document.getElementById('dotsContainer');
+    for (let i = 1; i <= totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.className = `dot ${i === 1 ? 'active' : ''}`;
+      dot.title = `Diapositiva ${i}`;
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    }
+
+    function updatePresentation() {
+      // Ocultar todas las slides
+      for (let i = 1; i <= totalSlides; i++) {
+        const slide = document.getElementById(`slide-${i}`);
+        if (slide) slide.classList.remove('active');
+      }
+
+      // Mostrar slide activa
+      const activeSlide = document.getElementById(`slide-${currentSlide}`);
+      if (activeSlide) activeSlide.classList.add('active');
+
+      // Actualizar contador
+      document.getElementById('slideCounter').innerText = `${currentSlide} / ${totalSlides}`;
+
+      // Actualizar dots
+      const dots = dotsContainer.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        if (index + 1 === currentSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+
+      // Scroll arriba suave
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updatePresentation();
+      } else {
+        currentSlide = 1;
+        updatePresentation();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updatePresentation();
+      }
+    }
+
+    function goToSlide(n) {
+      if (n >= 1 && n <= totalSlides) {
+        currentSlide = n;
+        updatePresentation();
+      }
+    }
+
+    // Navegación con teclado (Flecha izquierda / derecha)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        prevSlide();
+      }
+    });
+
+    // SIMULADOR DE CHATS EN VIVO (SLIDE 4)
+    function simulateChat(type) {
+      const chat = document.getElementById('chatWindow');
+      const buttons = document.querySelectorAll('.sim-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      if (type === 'audio') {
+        buttons[0].classList.add('active');
+        chat.innerHTML = `
+          <div class="chat-bubble chat-incoming">
+            <div class="audio-player-mockup">
+              <div class="audio-play-btn"><i class="fa-solid fa-play"></i></div>
+              <div class="waveform">
+                <div class="waveform-bar" style="animation-delay: 0.1s;"></div>
+                <div class="waveform-bar" style="animation-delay: 0.3s;"></div>
+                <div class="waveform-bar" style="animation-delay: 0.5s;"></div>
+                <div class="waveform-bar" style="animation-delay: 0.2s;"></div>
+                <div class="waveform-bar" style="animation-delay: 0.6s;"></div>
+                <div class="waveform-bar" style="animation-delay: 0.4s;"></div>
+              </div>
+              <span style="font-size: 0.72rem; color: #8696a0;">0:14</span>
+            </div>
+            <div style="font-size: 0.75rem; color: #8696a0; margin-top: 4px; font-style: italic;">
+              "Hola buenas tardes, mi mamá tiene fiebre alta y dolor abdominal en Prebo, ¿pueden mandar un médico a domicilio?"
+            </div>
+          </div>
+          <div class="chat-bubble chat-outgoing">
+            ¡Hola! Te saluda Lisa de *MediHome Valencia* 🩺✨. Con muchísimo gusto activamos nuestro servicio de consulta médica a domicilio en Prebo para atender a tu mami 🏡🚗💨.<br><br>
+            Nuestro equipo de guardia está listo para visitarla. ¿Podrías confirmarnos por favor su **nombre y edad** para coordinar la salida inmediata del médico?
+          </div>
+        `;
+      } else if (type === 'planes') {
+        buttons[1].classList.add('active');
+        chat.innerHTML = `
+          <div class="chat-bubble chat-incoming">
+            Hola, vivo en España y tengo a mis dos abuelitos solos en Valencia. ¿Qué plan médico me recomiendan para ellos?
+          </div>
+          <div class="chat-bubble chat-outgoing">
+            ¡Hola! Qué hermoso gesto cuidar de tus abuelitos con tanto amor 💖✨. En *MediHome* tenemos el plan perfecto para ellos:<br><br>
+            ✈️ *Plan Salud Sin Fronteras (80$/mes)*:<br>
+            • Telemedicina 24/7 y Urgencias médicas en su hogar 24/7.<br>
+            • 2 Visitas médicas en casa al mes para control de signos vitales.<br>
+            • Sueroterapia y exámenes de rutina.<br>
+            • 📲 Reporte clínico y fotográfico directo a tu WhatsApp tras cada visita.<br><br>
+            ¿En qué urbanización de Valencia se encuentran ellos para activar su protección? 🏡
+          </div>
+        `;
+      } else if (type === 'urgencia') {
+        buttons[2].classList.add('active');
+        chat.innerHTML = `
+          <div class="chat-bubble chat-incoming">
+            ¡URGENCIA! Mi esposo tiene un dolor muy fuerte en el pecho y le cuesta respirar en El Parral, ayúdenme por favor!
+          </div>
+          <div class="chat-bubble chat-outgoing" style="border-left: 3px solid #ef4444;">
+            🚨 *¡URGENCIA MÉDICA PRIORITARIA!* 🚨<br><br>
+            Te saluda Lisa de MediHome. Por la gravedad de los síntomas, por favor **comunícate de inmediato con nuestra línea directa de guardia**:<br>
+            📞 *0412-1233287* o *0414-4417118*<br><br>
+            Nuestro médico está disponible para coordinar el traslado inmediato a tu dirección en El Parral. 🚗💨
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

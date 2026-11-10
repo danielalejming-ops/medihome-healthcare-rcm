@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: medihome-lisa-cloud
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: DOCTOR_PHONE_1
+        value: 584121233287
+      - key: DOCTOR_PHONE_2
+        value: 584144417118

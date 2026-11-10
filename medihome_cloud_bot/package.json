@@ -1,0 +1,32 @@
+{
+  "name": "medihome-cloud-bot",
+  "version": "1.0.0",
+  "description": "Servidor en la Nube 24/7 de MediHome Valencia con Baileys, Google Gemini IA Multimodal y Alertas de Guardia",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "whatsapp",
+    "baileys",
+    "gemini",
+    "ai",
+    "medihome",
+    "valencia",
+    "bot"
+  ],
+  "author": "MediHome Valencia",
+  "license": "ISC",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.9",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pino": "^9.0.0",
+    "qrcode": "^1.5.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

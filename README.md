@@ -59,4 +59,4 @@ graph TD
 Architected and maintained by **Daniel Minguez**  
 Operations, Settlement & Regulatory Compliance Specialist  
 Madrid, Spain (EU) / Worldwide Remote  
-GitHub: [@danielalejming-ops](https://github.com/danielalejming-ops) | LinkedIn: [Daniel Minguez](https://linkedin.com/in/daniel-minguez)
+GitHub: [@danielalejming-ops](https://github.com/danielalejming-ops) | LinkedIn: [Daniel Minguez](https://www.linkedin.com/in/daniel-minguez-157887121/)
